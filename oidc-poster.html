@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenID Connect (OIDC) — Authentication on OAuth</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="oidc-poster.gif" download>GIF</a> · <a href="oidc-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>OPENID <span class="b">CONNECT</span></h1>
+  <div class="sub">The identity layer on OAuth 2.0 — proving <b>who</b> signed in with a verifiable ID token <span class="dim">(the engine behind “Sign in with Google”)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 WHAT OIDC ADDS -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">What OIDC adds <span class="t2">— identity, on top of OAuth</span></div></div>
+      <svg viewBox="0 0 1000 150" width="100%" style="display:block">
+        <text x="20" y="16" fill="#5AA9EC" font-size="13" font-weight="700" font-family="Century Gothic, sans-serif">OAUTH 2.0 — authorization</text>
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="20" y="34" width="120" height="30" rx="7" fill="#0c0c0c" stroke="#2b2b2b"/><text x="80" y="53" text-anchor="middle" fill="#fff">The app</text>
+          <line x1="140" y1="49" x2="250" y2="49" stroke="#2b2b2b" stroke-width="1.3"/>
+          <rect x="250" y="34" width="150" height="30" rx="7" fill="#0c0c0c" stroke="#2b2b2b"/><text x="325" y="53" text-anchor="middle" fill="#fff">access token</text>
+          <text x="210" y="88" text-anchor="middle" fill="#bdbdbd" font-size="10.5">→ WHAT the app may access</text>
+          <text x="210" y="103" text-anchor="middle" fill="#8c8c8c" font-size="10">(call APIs)</text>
+        </g>
+        <text x="500" y="50" text-anchor="middle" fill="#E9BF35" font-size="22" font-weight="800">+ openid</text>
+        <text x="500" y="68" text-anchor="middle" fill="#8c8c8c" font-size="10">one scope flips it on</text>
+        <text x="600" y="16" fill="#E9BF35" font-size="13" font-weight="700" font-family="Century Gothic, sans-serif">OPENID CONNECT — authentication</text>
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="600" y="34" width="120" height="30" rx="7" fill="#0c0c0c" stroke="#2b2b2b"/><text x="660" y="53" text-anchor="middle" fill="#fff">The app</text>
+          <line x1="720" y1="49" x2="770" y2="49" stroke="#2b2b2b" stroke-width="1.3"/>
+          <rect x="770" y="34" width="190" height="30" rx="7" fill="#1a1305" stroke="#E9BF35"/><text x="865" y="53" text-anchor="middle" fill="#E9BF35">ID token (JWT)</text>
+          <g fill="none" stroke="none"><path id="oi1" d="M720,49 L770,49"/></g>
+          <circle r="3.1" fill="#E9BF35"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#oi1"/></animateMotion></circle>
+          <text x="820" y="88" text-anchor="middle" fill="#81BB42" font-size="10.5">→ WHO signed in ✓</text>
+          <text x="820" y="103" text-anchor="middle" fill="#8c8c8c" font-size="10">(verifiable identity)</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">Ask for the <b>openid</b> scope and OAuth hands back an <span class="em">ID token</span> — signed proof of the user's identity.</p>
+    </div>
+
+    <!-- 02 THREE ROLES -->
+    <div class="card span2 c-teal">
+      <div class="chead"><div class="num">02</div><div class="ctitle">The three roles <span class="t2">— in OIDC's words</span></div></div>
+      <div class="trio">
+        <div class="mini"><h4 style="color:#5AA9EC">👤 End User</h4><p>The person signing in — the identity being proven.</p></div>
+        <div class="mini"><h4 style="color:#3AD0B0">📱 Relying Party (RP)</h4><p>Your app — it <b>relies on</b> the provider to authenticate the user.</p></div>
+        <div class="mini"><h4 style="color:#E9BF35">🔐 OpenID Provider (OP)</h4><p>Google, Microsoft, Okta… authenticates &amp; issues the ID token.</p></div>
+      </div>
+      <p style="margin-top:9px"><span class="em">“Sign in with Google” — Google is the OP, your app is the RP.</span></p>
+    </div>
+
+    <!-- 03 THE FLOW -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">03</div><div class="ctitle">The sign-in flow <span class="t2">— Authorization Code + PKCE, with <b>scope=openid</b></span></div></div>
+      <svg viewBox="0 0 1000 176" width="100%" style="display:block">
+        <line x1="50" y1="92" x2="950" y2="92" stroke="#2b2b2b" stroke-width="2"/>
+        <path id="oidcflow" d="M50,92 L950,92" fill="none" stroke="none"/>
+        <circle r="6" fill="#E9BF35" opacity=".28"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#oidcflow"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#oidcflow"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif">
+          <g><circle class="tlDot" cx="90" cy="92" r="6" fill="#5AA9EC" style="animation-delay:0s"/>
+            <text x="90" y="44" text-anchor="middle" fill="#5AA9EC" font-size="12" font-weight="800">1 · /authorize</text>
+            <text x="90" y="118" text-anchor="middle" fill="#bdbdbd" font-size="10">app → provider</text>
+            <text x="90" y="132" text-anchor="middle" fill="#8c8c8c" font-size="9.5">scope=openid + PKCE</text></g>
+          <g><circle class="tlDot" cx="262" cy="92" r="6" fill="#3AD0B0" style="animation-delay:.4s"/>
+            <text x="262" y="44" text-anchor="middle" fill="#3AD0B0" font-size="12" font-weight="800">2 · sign in + consent</text>
+            <text x="262" y="118" text-anchor="middle" fill="#bdbdbd" font-size="10">user ↔ provider</text>
+            <text x="262" y="132" text-anchor="middle" fill="#8c8c8c" font-size="9.5">approve profile · email</text></g>
+          <g><circle class="tlDot" cx="434" cy="92" r="6" fill="#FE9A3A" style="animation-delay:.8s"/>
+            <text x="434" y="44" text-anchor="middle" fill="#FE9A3A" font-size="12" font-weight="800">3 · code</text>
+            <text x="434" y="118" text-anchor="middle" fill="#bdbdbd" font-size="10">provider → app</text>
+            <text x="434" y="132" text-anchor="middle" fill="#8c8c8c" font-size="9.5">one-time, short-lived</text></g>
+          <g><circle class="tlDot" cx="606" cy="92" r="6" fill="#9B5DE5" style="animation-delay:1.2s"/>
+            <text x="606" y="44" text-anchor="middle" fill="#9B5DE5" font-size="12" font-weight="800">4 · /token</text>
+            <text x="606" y="118" text-anchor="middle" fill="#bdbdbd" font-size="10">app → provider</text>
+            <text x="606" y="132" text-anchor="middle" fill="#8c8c8c" font-size="9.5">code + PKCE verifier</text></g>
+          <g><circle class="tlDot" cx="778" cy="92" r="6" fill="#E9BF35" style="animation-delay:1.6s"/>
+            <text x="778" y="44" text-anchor="middle" fill="#E9BF35" font-size="12" font-weight="800">5 · id_token</text>
+            <text x="778" y="118" text-anchor="middle" fill="#bdbdbd" font-size="10">provider → app</text>
+            <text x="778" y="132" text-anchor="middle" fill="#8c8c8c" font-size="9.5">+ access token · validate!</text></g>
+          <g><circle class="tlDot" cx="928" cy="92" r="6" fill="#81BB42" style="animation-delay:2s"/>
+            <text x="928" y="44" text-anchor="middle" fill="#81BB42" font-size="12" font-weight="800">6 · UserInfo</text>
+            <text x="928" y="118" text-anchor="middle" fill="#bdbdbd" font-size="10">app → provider</text>
+            <text x="928" y="132" text-anchor="middle" fill="#8c8c8c" font-size="9.5">more claims (optional)</text></g>
+        </g>
+      </svg>
+      <p style="margin-top:7px"><span class="em">Same flow as OAuth — the <b>openid</b> scope is what adds the ID token in step 5.</span></p>
+    </div>
+
+    <!-- 04 THE ID TOKEN -->
+    <div class="card c-gold">
+      <div class="chead"><div class="num">04</div><div class="ctitle">The ID token <span class="t2">— a signed JWT</span></div></div>
+      <div class="steps">
+        <span class="step" style="border-color:#1e3a52;color:#5AA9EC">header</span><span class="arrow" style="color:#8c8c8c">.</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">payload</span><span class="arrow" style="color:#8c8c8c">.</span>
+        <span class="step" style="border-color:#3a2d08;color:#E9BF35">signature</span>
+      </div>
+      <p style="margin-top:9px">Claims: <b>iss</b> (issuer) · <b>sub</b> (stable user id) · <b>aud</b> (which app) · <b>exp</b> (expiry) · <b>nonce</b>.</p>
+      <p style="margin-top:6px"><span class="em">Proof of identity — verify it, don't just read it.</span></p>
+    </div>
+
+    <!-- 05 ID vs ACCESS -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">05</div><div class="ctitle">ID token ≠ Access token</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🪪</span><div><b>ID token</b> <span>— for <b>the app</b>. Proves who logged in. Its <b>aud</b> is your client.</span></div></div>
+        <div class="gx"><span class="ic">🎟️</span><div><b>Access token</b> <span>— for <b>the API</b>. Grants access. Sent as Bearer.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">Never send the ID token to an API, nor use an access token to identify the user.</span></p>
+    </div>
+
+    <!-- 06 SCOPES -->
+    <div class="card c-green">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Scopes → claims</div></div>
+      <p style="margin-bottom:7px"><b>openid</b> is required — it's what makes it OIDC. Add more for standard claims:</p>
+      <div class="chips">
+        <span class="chip">openid</span><span class="chip">profile</span><span class="chip">email</span><span class="chip">address</span><span class="chip">phone</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">Need more detail? Call the UserInfo endpoint with the access token.</span></p>
+    </div>
+
+    <!-- 07 VALIDATE -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">07</div><div class="ctitle">Validate the ID token</div></div>
+      <p style="margin-bottom:7px">Decoding ≠ trusting. Check <b>every</b> time:</p>
+      <div class="steps">
+        <span class="step">signature (JWKS)</span><span class="arrow">·</span>
+        <span class="step">iss</span><span class="arrow">·</span>
+        <span class="step">aud</span><span class="arrow">·</span>
+        <span class="step">exp</span><span class="arrow">·</span>
+        <span class="step">nonce</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">A token you didn't verify is just a string an attacker can forge.</span></p>
+    </div>
+
+    <!-- 08 ON THE WIRE -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">08</div><div class="ctitle">On the wire <span class="t2">— the /token response now carries an id_token</span></div></div>
+      <div class="wire">
+<span class="cm">// /token response — access_token as before, plus the id_token</span><br>
+{ <span class="key">"access_token"</span>: <span class="str">"eyJhbGc…"</span>, <span class="key">"id_token"</span>: <span class="str">"eyJhbGc…&lt;JWT&gt;"</span>, <span class="key">"token_type"</span>: <span class="str">"Bearer"</span>, <span class="key">"expires_in"</span>: <span class="num2">3600</span> }<br>
+<span class="cm">// the id_token payload, decoded — claims about the user</span><br>
+{ <span class="key">"iss"</span>: <span class="str">"https://accounts.google.com"</span>, <span class="key">"sub"</span>: <span class="str">"10769150350006150"</span>, <span class="key">"aud"</span>: <span class="str">"&lt;your-client-id&gt;"</span>,<br>
+&nbsp;&nbsp;<span class="key">"exp"</span>: <span class="num2">1699999999</span>, <span class="key">"email"</span>: <span class="str">"ada@example.com"</span>, <span class="key">"nonce"</span>: <span class="str">"n-0S6_…"</span> }
+      </div>
+    </div>
+
+    <!-- 09 DISCOVERY -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Discovery</div></div>
+      <p style="margin-bottom:7px">The provider publishes everything at one well-known URL:</p>
+      <div class="wire" style="font-size:10.3px">GET /.well-known/openid-configuration</div>
+      <p style="margin-top:9px">→ the endpoints (<b>authorize</b> · <b>token</b> · <b>userinfo</b>) and <b>jwks_uri</b> — the keys you verify with.</p>
+    </div>
+
+    <!-- 10 GOTCHAS -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🎭</span><div><b>Access token as login</b> <span>— it proves access, not identity. Use the ID token.</span></div></div>
+        <div class="gx"><span class="ic">✍️</span><div><b>Unverified signature</b> <span>— always check it against the provider's JWKS keys.</span></div></div>
+        <div class="gx"><span class="ic">🎯</span><div><b>Ignoring aud</b> <span>— a token minted for another app isn't yours to trust.</span></div></div>
+        <div class="gx"><span class="ic">🆔</span><div><b>email as the key</b> <span>— emails change &amp; get reused. Key users on <b>sub</b> + <b>iss</b>.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">OIDC is <span class="em">OAuth + identity</span> — one <b>openid</b> scope turns delegated access into a <span class="em">verifiable proof of who signed in</span>.</div>
+      <div class="flow2">
+        <span class="step">openid scope</span><span class="arrow">→</span>
+        <span class="step">ID token</span><span class="arrow">→</span>
+        <span class="step">Validate</span><span class="arrow">→</span>
+        <span class="step">Know the user</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

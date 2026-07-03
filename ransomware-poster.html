@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ransomware Kill Chain</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="ransomware-poster.gif" download>GIF</a> · <a href="ransomware-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>RANSOMWARE <span class="b">KILL CHAIN</span></h1>
+  <div class="sub">Not one event but a <b>multi-stage intrusion</b> that ends in encryption + extortion <span class="dim">(the earlier you break the chain, the less it costs you)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 THE KEY IDEA -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">01</div><div class="ctitle">The key idea <span class="t2">— ransomware is a process, not a moment</span></div></div>
+      <p class="lead">Encryption is the <b>last</b> act, not the first. Before your files lock, attackers have already broken in, spread across the network, stolen credentials, and copied your data out.</p>
+      <p style="margin-top:6px">Each stage is a chance to detect and stop them. <span class="em">Break the chain early and there is nothing left to encrypt.</span></p>
+    </div>
+
+    <!-- 02 THE STAGES — HERO FLOW -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">02</div><div class="ctitle">The stages <span class="t2">— one intrusion, left to right · <b style="color:#81BB42">break it before the lock</b></span></div></div>
+      <svg viewBox="0 0 1000 184" width="100%" style="display:block">
+        <!-- rail -->
+        <line x1="40" y1="104" x2="770" y2="104" stroke="#2b2b2b" stroke-width="2"/>
+        <line x1="770" y1="104" x2="960" y2="104" stroke="#3a1414" stroke-width="2"/>
+        <!-- travelling dot along the pre-encryption rail -->
+        <path id="rwFlow" d="M40,104 L770,104" fill="none" stroke="none"/>
+        <circle r="6" fill="#E9BF35" opacity=".28"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#rwFlow"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#rwFlow"/></animateMotion></circle>
+        <!-- break-it-early marker -->
+        <g font-family="Century Gothic, sans-serif">
+          <line x1="770" y1="72" x2="770" y2="138" stroke="#81BB42" stroke-width="1.6" stroke-dasharray="4 4"/>
+          <rect x="700" y="146" width="140" height="18" rx="6" fill="#0d1305" stroke="#81BB42"/>
+          <text x="770" y="159" text-anchor="middle" fill="#81BB42" font-size="10" font-weight="800">◄ break it before here</text>
+        </g>
+        <g font-family="Century Gothic, sans-serif">
+          <g><circle class="tlDot" cx="70" cy="104" r="6" fill="#5AA9EC" style="animation-delay:0s"/>
+            <text x="70" y="54" text-anchor="middle" fill="#5AA9EC" font-size="10.5" font-weight="800">1 · Initial</text>
+            <text x="70" y="67" text-anchor="middle" fill="#5AA9EC" font-size="10.5" font-weight="800">access</text>
+            <text x="70" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">get in</text></g>
+          <g><circle class="tlDot" cx="170" cy="104" r="6" fill="#3AD0B0" style="animation-delay:.3s"/>
+            <text x="170" y="54" text-anchor="middle" fill="#3AD0B0" font-size="10.5" font-weight="800">2 · Foothold</text>
+            <text x="170" y="67" text-anchor="middle" fill="#3AD0B0" font-size="10.5" font-weight="800">execute</text>
+            <text x="170" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">run payload</text></g>
+          <g><circle class="tlDot" cx="270" cy="104" r="6" fill="#FE9A3A" style="animation-delay:.6s"/>
+            <text x="270" y="54" text-anchor="middle" fill="#FE9A3A" font-size="10.5" font-weight="800">3 · Privilege</text>
+            <text x="270" y="67" text-anchor="middle" fill="#FE9A3A" font-size="10.5" font-weight="800">escalate</text>
+            <text x="270" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">get admin</text></g>
+          <g><circle class="tlDot" cx="370" cy="104" r="6" fill="#9B5DE5" style="animation-delay:.9s"/>
+            <text x="370" y="60" text-anchor="middle" fill="#9B5DE5" font-size="10.5" font-weight="800">4 · Discovery</text>
+            <text x="370" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">map network</text></g>
+          <g><circle class="tlDot" cx="470" cy="104" r="6" fill="#5AA9EC" style="animation-delay:1.2s"/>
+            <text x="470" y="54" text-anchor="middle" fill="#5AA9EC" font-size="10.5" font-weight="800">5 · Lateral</text>
+            <text x="470" y="67" text-anchor="middle" fill="#5AA9EC" font-size="10.5" font-weight="800">movement</text>
+            <text x="470" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">spread</text></g>
+          <g><circle class="tlDot" cx="570" cy="104" r="6" fill="#3AD0B0" style="animation-delay:1.5s"/>
+            <text x="570" y="54" text-anchor="middle" fill="#3AD0B0" font-size="10.5" font-weight="800">6 · Credential</text>
+            <text x="570" y="67" text-anchor="middle" fill="#3AD0B0" font-size="10.5" font-weight="800">access</text>
+            <text x="570" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">steal keys</text></g>
+          <g><circle class="tlDot" cx="670" cy="104" r="6" fill="#FE9A3A" style="animation-delay:1.8s"/>
+            <text x="670" y="60" text-anchor="middle" fill="#FE9A3A" font-size="10.5" font-weight="800">7 · Exfiltrate</text>
+            <text x="670" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">copy data out</text></g>
+          <g><circle class="tlDot" cx="820" cy="104" r="7" fill="#FF5A4D" style="animation-delay:2.1s"/>
+            <text x="820" y="54" text-anchor="middle" fill="#FF5A4D" font-size="11" font-weight="800">8 · Encrypt</text>
+            <text x="820" y="67" text-anchor="middle" fill="#FF5A4D" font-size="11" font-weight="800">/ impact</text>
+            <text x="820" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">lock files</text></g>
+          <g><circle class="tlDot" cx="930" cy="104" r="7" fill="#DF2E28" style="animation-delay:2.4s"/>
+            <text x="930" y="60" text-anchor="middle" fill="#FF5A4D" font-size="11" font-weight="800">9 · Extort</text>
+            <text x="930" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9">pay or leak</text></g>
+        </g>
+      </svg>
+      <p style="margin-top:5px"><span class="em">Stages 1–7 can run for days or weeks before a single file locks — that window is where defenders win.</span></p>
+    </div>
+
+    <!-- 03 INITIAL ACCESS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">03</div><div class="ctitle">Initial access <span class="t2">— how they get in</span></div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🎣</span><div><b>Phishing</b> <span>— a malicious link or attachment lands the first foothold.</span></div></div>
+        <div class="gx"><span class="ic">🖥️</span><div><b>Exposed RDP / VPN</b> <span>— internet-facing remote access with weak or no MFA.</span></div></div>
+        <div class="gx"><span class="ic">🐛</span><div><b>Exploited vulnerabilities</b> <span>— unpatched edge devices and servers.</span></div></div>
+        <div class="gx"><span class="ic">🔑</span><div><b>Stolen / bought credentials</b> <span>— valid logins sold by access brokers.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 04 DWELL & SPREAD -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">04</div><div class="ctitle">Dwell &amp; spread <span class="t2">— the quiet part</span></div></div>
+      <p style="margin-bottom:6px">Once inside, they don't rush. Over <b>days or weeks</b> they:</p>
+      <div class="steps">
+        <span class="step">escalate privilege</span><span class="arrow">→</span>
+        <span class="step">map the network</span><span class="arrow">→</span>
+        <span class="step">move laterally</span><span class="arrow">→</span>
+        <span class="step">grab domain admin</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">All of this happens before anything encrypts — and it is loud enough to catch.</span></p>
+    </div>
+
+    <!-- 05 DOUBLE / TRIPLE EXTORTION -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">05</div><div class="ctitle">Double &amp; triple extortion <span class="t2">— why backups alone no longer save you</span></div></div>
+      <svg viewBox="0 0 1000 116" width="100%" style="display:block">
+        <line x1="70" y1="56" x2="930" y2="56" stroke="#2b2b2b" stroke-width="2"/>
+        <path id="rwExt" d="M70,56 L930,56" fill="none" stroke="none"/>
+        <circle r="6" fill="#9B5DE5" opacity=".28"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#rwExt"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#rwExt"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif">
+          <g><circle class="tlDot" cx="120" cy="56" r="6" fill="#FE9A3A" style="animation-delay:0s"/>
+            <text x="120" y="42" text-anchor="middle" fill="#FE9A3A" font-size="12" font-weight="800">1 · Exfiltrate</text>
+            <text x="120" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">copy the data out first</text></g>
+          <g><circle class="tlDot" cx="390" cy="56" r="6" fill="#FF5A4D" style="animation-delay:.7s"/>
+            <text x="390" y="42" text-anchor="middle" fill="#FF5A4D" font-size="12" font-weight="800">2 · Encrypt</text>
+            <text x="390" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">then lock the files</text></g>
+          <g><circle class="tlDot" cx="660" cy="56" r="6" fill="#9B5DE5" style="animation-delay:1.4s"/>
+            <text x="660" y="42" text-anchor="middle" fill="#9B5DE5" font-size="12" font-weight="800">3 · Threaten to leak</text>
+            <text x="660" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">pay or we publish</text></g>
+          <g><circle class="tlDot" cx="900" cy="56" r="6" fill="#DF2E28" style="animation-delay:2.1s"/>
+            <text x="900" y="42" text-anchor="middle" fill="#FF5A4D" font-size="12" font-weight="800">+ pressure</text>
+            <text x="900" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">DDoS · harass customers</text></g>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">Because the data is <b>stolen before it is encrypted</b>, restoring from backup fixes the outage — but the <span class="em">leak threat remains</span>.</p>
+    </div>
+
+    <!-- 06 ENCRYPTION / IMPACT -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Encryption / impact <span class="t2">— the visible blow</span></div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🔒</span><div><b>Mass-encrypt files</b> <span>— servers, shares and endpoints, often overnight.</span></div></div>
+        <div class="gx"><span class="ic">🗑️</span><div><b>Wipe recovery</b> <span>— delete backups &amp; shadow copies so you can't roll back.</span></div></div>
+        <div class="gx"><span class="ic">📝</span><div><b>Drop the ransom note</b> <span>— payment demand, deadline, leak-site link.</span></div></div>
+      </div>
+      <p style="margin-top:7px"><span class="dim" style="color:#8c8c8c">By the time you see the note, every earlier round was already lost.</span></p>
+    </div>
+
+    <!-- 07 DEFENSES BY STAGE -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">07</div><div class="ctitle">Defenses by stage <span class="t2">— every link is a place to break the chain</span></div></div>
+      <table>
+        <tr><th>Stage</th><th>What it does</th><th>First move</th></tr>
+        <tr><td class="k">Initial access</td><td>gets the foothold</td><td class="win">MFA everywhere · patch edge · email security</td></tr>
+        <tr><td class="k">Lateral movement</td><td>spreads across the network</td><td class="win">EDR + network segmentation</td></tr>
+        <tr><td class="k">Credential access</td><td>steals admin keys</td><td class="win">tiered admin · PAM · least privilege</td></tr>
+        <tr><td class="k">Exfiltration</td><td>copies data out</td><td class="win">egress monitoring · DLP · exfil alerts</td></tr>
+        <tr><td class="k">Encryption / impact</td><td>locks &amp; deletes backups</td><td class="win">immutable / offline backups · tested restores</td></tr>
+      </table>
+    </div>
+
+    <!-- 08 BACKUPS = LAST LINE -->
+    <div class="card c-green">
+      <div class="chead"><div class="num">08</div><div class="ctitle">Backups = last line <span class="t2">— not the only line</span></div></div>
+      <p style="margin-bottom:6px">Backups get you running again — but only if they're:</p>
+      <div class="chips">
+        <span class="chip">offline / immutable</span><span class="chip">out of attacker reach</span><span class="chip">tested restores</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">And exfiltration still means a potential leak — a good backup answers downtime, not disclosure.</span></p>
+    </div>
+
+    <!-- 09 BREAK IT EARLY -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Break it early <span class="t2">— shrink the blast radius</span></div></div>
+      <p style="margin-bottom:6px">Every stage <b>before encryption</b> is a chance to catch it. Three controls do the most work:</p>
+      <div class="steps">
+        <span class="step">segmentation</span><span class="arrow">·</span>
+        <span class="step">least privilege</span><span class="arrow">·</span>
+        <span class="step">detection</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">Contain the intruder to one segment and the "kill chain" never reaches the lock.</span></p>
+    </div>
+
+    <!-- 10 WATCH OUT -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Watch out</div></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px 18px">
+        <div class="gx"><span class="ic">💸</span><div><b>Paying doesn't guarantee recovery</b> <span>— decryptors fail, and it funds crime.</span></div></div>
+        <div class="gx"><span class="ic">📰</span><div><b>The leak is often the real damage</b> <span>— stolen data can't be un-stolen.</span></div></div>
+        <div class="gx"><span class="ic">🛒</span><div><b>Ransomware-as-a-Service</b> <span>— affiliate kits lowered the bar for attackers.</span></div></div>
+        <div class="gx"><span class="ic">🐢</span><div><b>Recovery is slow</b> <span>— plan incident response &amp; business continuity now.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">Ransomware is a <span class="em">kill chain</span> — stop it at initial access, detect lateral movement, protect identities, and keep immutable backups. <span class="em">Once files encrypt, the early rounds were already lost.</span></div>
+      <div class="flow2">
+        <span class="step">Block the entry</span><span class="arrow">→</span>
+        <span class="step">Detect the spread</span><span class="arrow">→</span>
+        <span class="step">Protect identities</span><span class="arrow">→</span>
+        <span class="step">Immutable backups</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

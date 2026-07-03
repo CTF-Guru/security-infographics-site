@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSPM — SaaS Security Posture Management</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="sspm-poster.gif" download>GIF</a> · <a href="sspm-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>SAAS <span class="b">POSTURE</span></h1>
+  <div class="sub">Continuously checking your SaaS apps for risky <b>settings</b> — the CSPM idea, applied to the apps you don't host <span class="dim">(M365 · Google Workspace · Salesforce · Slack · GitHub…)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 WHAT IT IS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">What it is</div></div>
+      <p><b>SaaS Security Posture Management</b> — tooling that continuously checks your SaaS apps for risky configuration. It's the <b>CSPM</b> idea (cloud posture) pointed at SaaS: M365, Google Workspace, Salesforce, Slack, GitHub, and the rest of the estate.</p>
+      <p style="margin-top:7px"><span class="em">Not the infrastructure — the app's own security settings.</span></p>
+    </div>
+
+    <!-- 02 THE PROBLEM -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">02</div><div class="ctitle">The problem</div></div>
+      <p>Every SaaS app is its own admin console with <b>hundreds</b> of security settings — owned by different teams, changed by different admins.</p>
+      <div class="gotchas" style="margin-top:6px">
+        <div class="gx"><span class="ic">🧩</span><div><b>Fragmented</b> <span>— no two consoles look alike.</span></div></div>
+        <div class="gx"><span class="ic">👻</span><div><b>Invisible drift</b> <span>— misconfigurations pile up unseen.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 03 WHAT IT FINDS -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">03</div><div class="ctitle">What it finds <span class="t2">— the recurring classes of SaaS misconfiguration</span></div></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 16px; margin-top:2px">
+        <div class="gx"><span class="ic">🛡️</span><div><b>Weak admin controls</b> <span>— too many admins, no session limits.</span></div></div>
+        <div class="gx"><span class="ic">🔑</span><div><b>MFA missing or optional</b> <span>— not enforced for all users.</span></div></div>
+        <div class="gx"><span class="ic">🔗</span><div><b>Over-broad sharing</b> <span>— public links, anyone-with-the-link.</span></div></div>
+        <div class="gx"><span class="ic">🔌</span><div><b>Risky OAuth apps</b> <span>— third-party integrations with wide scopes.</span></div></div>
+        <div class="gx"><span class="ic">💤</span><div><b>Dormant admins</b> <span>— privileged accounts nobody uses.</span></div></div>
+        <div class="gx"><span class="ic">🌐</span><div><b>Weak external defaults</b> <span>— guest &amp; cross-tenant sharing wide open.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 04 THIRD-PARTY OAUTH -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">04</div><div class="ctitle">Third-party OAuth integrations <span class="t2">— the shadow SaaS supply chain</span></div></div>
+      <svg viewBox="0 0 1000 138" width="100%" style="display:block">
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="24" y="52" width="150" height="34" rx="8" fill="#0c0c0c" stroke="#2b2b2b"/><text x="99" y="73" text-anchor="middle" fill="#fff">A user</text>
+          <text x="99" y="106" text-anchor="middle" fill="#8c8c8c" font-size="9.5">clicks "Connect"</text>
+
+          <line x1="174" y1="69" x2="392" y2="69" stroke="#2b2b2b" stroke-width="1.3"/>
+          <path id="ssOauth" d="M174,69 L392,69" fill="none" stroke="none"/>
+          <circle r="3.4" fill="#9B5DE5"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#ssOauth"/></animateMotion></circle>
+          <text x="283" y="60" text-anchor="middle" fill="#9B5DE5" font-size="9.5">grants OAuth scopes →</text>
+
+          <rect x="392" y="46" width="200" height="46" rx="8" fill="#150c1f" stroke="#9B5DE5"/><text x="492" y="66" text-anchor="middle" fill="#9B5DE5">3rd-party app</text><text x="492" y="82" text-anchor="middle" fill="#bdbdbd" font-size="9.5">read mail · files · contacts</text>
+
+          <line x1="592" y1="69" x2="806" y2="69" stroke="#2b2b2b" stroke-width="1.3" stroke-dasharray="3 4"/>
+          <text x="699" y="60" text-anchor="middle" fill="#FF5A4D" font-size="9.5">standing access →</text>
+
+          <rect x="806" y="52" width="170" height="34" rx="8" fill="#1a0a0a" stroke="#FF5A4D"/><text x="891" y="73" text-anchor="middle" fill="#FF5A4D">Your SaaS data</text>
+          <text x="891" y="106" text-anchor="middle" fill="#8c8c8c" font-size="9.5">no password needed</text>
+
+          <text x="500" y="24" text-anchor="middle" fill="#E9BF35" font-size="12" font-weight="800">SaaS-to-SaaS — a token, not a login</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">Users grant SaaS-to-SaaS apps broad scopes with one click — access that lives on after they leave. <span class="em">SSPM inventories every grant and flags the risky ones</span> — your third-party supply chain, made visible.</p>
+    </div>
+
+    <!-- 05 ONE DASHBOARD -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">05</div><div class="ctitle">One view of the estate</div></div>
+      <p>Identity + config across every SaaS app in a single dashboard — instead of logging into each admin console to check the same handful of settings.</p>
+      <div class="steps" style="margin-top:8px">
+        <span class="step">M365</span><span class="arrow">·</span>
+        <span class="step">Workspace</span><span class="arrow">·</span>
+        <span class="step">Salesforce</span><span class="arrow">·</span>
+        <span class="step">Slack</span><span class="arrow">·</span>
+        <span class="step">GitHub</span>
+      </div>
+    </div>
+
+    <!-- 06 HOW IT WORKS -->
+    <div class="card c-green">
+      <div class="chead"><div class="num">06</div><div class="ctitle">How it works</div></div>
+      <div class="steps">
+        <span class="step" style="border-color:#243b18;color:#81BB42">connect (API)</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">inventory</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">benchmark</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">flag drift</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">remediate</span>
+      </div>
+      <p style="margin-top:9px">Read settings, users &amp; integrations via each app's API, compare to best practice, surface what drifted. <span class="em">A continuous loop, not a one-time audit.</span></p>
+    </div>
+
+    <!-- 07 SSPM vs CASB -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">07</div><div class="ctitle">SSPM vs CASB <span class="t2">— posture of the app vs control of the access · complementary</span></div></div>
+      <table>
+        <tr><th>&nbsp;</th><th>SSPM</th><th>CASB</th></tr>
+        <tr><td class="k">Watches</td><td class="win">The SaaS config / posture</td><td>Access &amp; data in transit</td></tr>
+        <tr><td class="k">Question</td><td class="win">Is this app set up safely?</td><td>Who is reaching this app, with what data?</td></tr>
+        <tr><td class="k">How</td><td class="win">API — reads settings &amp; integrations</td><td>Proxy / gateway in the data path</td></tr>
+        <tr><td class="k">Acts on</td><td class="win">Settings, sharing, OAuth grants</td><td>Sessions, uploads, blocked actions</td></tr>
+      </table>
+      <p style="margin-top:7px"><span class="em">SSPM hardens the app; CASB polices the traffic — most estates run both.</span></p>
+    </div>
+
+    <!-- 08 WHERE IT FITS -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">08</div><div class="ctitle">Where it fits <span class="t2">— SaaS is its own posture domain</span></div></div>
+      <div class="trio">
+        <div class="mini"><h4 style="color:#5AA9EC">☁️ CSPM</h4><p>Cloud infra posture — IaaS/PaaS config (AWS, Azure, GCP).</p></div>
+        <div class="mini"><h4 style="color:#3AD0B0">🗄️ DSPM</h4><p>Data posture — where sensitive data lives &amp; who can reach it.</p></div>
+        <div class="mini"><h4 style="color:#E9BF35">🪪 ISPM</h4><p>Identity posture — accounts, entitlements &amp; privilege sprawl.</p></div>
+      </div>
+      <p style="margin-top:9px"><span class="em">SSPM is the missing peer — posture for the SaaS apps you rent, not the infra you run.</span></p>
+    </div>
+
+    <!-- 09 WATCH OUT -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🌑</span><div><b>Shadow SaaS</b> <span>— apps IT never approved, invisible to the estate.</span></div></div>
+        <div class="gx"><span class="ic">🔌</span><div><b>OAuth grants</b> <span>— the new supply chain; a token outlives the user.</span></div></div>
+        <div class="gx"><span class="ic">⚙️</span><div><b>Misconfig, not breach</b> <span>— the usual cause of a SaaS incident.</span></div></div>
+        <div class="gx"><span class="ic">📡</span><div><b>API coverage varies</b> <span>— what SSPM can see differs per app.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 10 CONTROLS -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">10</div><div class="ctitle">First moves</div></div>
+      <table>
+        <tr><th>Finding</th><th>First fix</th></tr>
+        <tr><td class="k">MFA optional</td><td class="win">Enforce for all users</td></tr>
+        <tr><td class="k">Public links</td><td class="win">Restrict external sharing</td></tr>
+        <tr><td class="k">Risky OAuth app</td><td class="win">Revoke · gate new grants</td></tr>
+        <tr><td class="k">Dormant admin</td><td class="win">Deprovision · least privilege</td></tr>
+      </table>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">SSPM continuously hardens your SaaS <span class="em">settings, sharing, and third-party integrations</span> — the <span class="em">posture layer for the apps you do not host</span>.</div>
+      <div class="flow2">
+        <span class="step">Connect the apps</span><span class="arrow">→</span>
+        <span class="step">Inventory config &amp; grants</span><span class="arrow">→</span>
+        <span class="step">Flag the drift</span><span class="arrow">→</span>
+        <span class="step">Remediate continuously</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSPM vs DLP — Find Data vs Stop Data</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="dspm-dlp-poster.gif" download>GIF</a> · <a href="dspm-dlp-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>DSPM vs <span class="b">DLP</span></h1>
+  <div class="sub">Two data-security jobs, often confused — one <b>finds and maps</b> your sensitive data at rest, the other <b>controls its movement</b> at the exit <span class="dim">(inventory vs enforcement)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 THE ONE-LINE DIFFERENCE -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">The one-line difference <span class="t2">— know where it is vs stop it leaving</span></div></div>
+      <svg viewBox="0 0 1000 116" width="100%" style="display:block">
+        <!-- DSPM side -->
+        <text x="20" y="16" fill="#5AA9EC" font-size="13" font-weight="700" font-family="Century Gothic, sans-serif">DSPM — find &amp; map (at rest)</text>
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="20" y="34" width="150" height="30" rx="7" fill="#0c0c0c" stroke="#5AA9EC"/><text x="95" y="53" text-anchor="middle" fill="#5AA9EC">🗺️ inventory</text>
+          <text x="95" y="88" text-anchor="middle" fill="#bdbdbd" font-size="10.5">WHERE is the data?</text>
+          <text x="95" y="103" text-anchor="middle" fill="#8c8c8c" font-size="10">WHO can reach it?</text>
+        </g>
+        <!-- centre split -->
+        <text x="500" y="48" text-anchor="middle" fill="#E9BF35" font-size="20" font-weight="800">two jobs</text>
+        <text x="500" y="66" text-anchor="middle" fill="#8c8c8c" font-size="10">posture · then enforcement</text>
+        <line x1="500" y1="78" x2="500" y2="118" stroke="#2b2b2b" stroke-width="1.3" stroke-dasharray="4 4"/>
+        <!-- DLP side -->
+        <text x="640" y="16" fill="#E9BF35" font-size="13" font-weight="700" font-family="Century Gothic, sans-serif" text-anchor="start">DLP — control movement (in motion)</text>
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="830" y="34" width="150" height="30" rx="7" fill="#1a1305" stroke="#E9BF35"/><text x="905" y="53" text-anchor="middle" fill="#E9BF35">🚧 checkpoint</text>
+          <path id="d01" d="M700,49 L830,49" fill="none" stroke="#2b2b2b" stroke-width="1.3"/>
+          <circle r="3.2" fill="#E9BF35"><animateMotion dur="2.0s" repeatCount="indefinite"><mpath href="#d01"/></animateMotion></circle>
+          <text x="905" y="88" text-anchor="middle" fill="#bdbdbd" font-size="10.5">is it leaving?</text>
+          <text x="905" y="103" text-anchor="middle" fill="#8c8c8c" font-size="10">allow · alert · block</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead"><b>DSPM</b> finds WHERE your sensitive data lives and WHO can reach it. <b>DLP</b> controls and blocks data <span class="em">movement</span>. Inventory vs enforcement.</p>
+    </div>
+
+    <!-- 02 DSPM -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">02</div><div class="ctitle">DSPM <span class="t2">— Data Security Posture Management</span></div></div>
+      <p style="margin-bottom:6px">Discovers sensitive data across <b>cloud, SaaS &amp; data stores</b>, then:</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🔎</span><div><b>Discover &amp; classify</b> <span>— finds PII, secrets &amp; regulated data, tags what it is.</span></div></div>
+        <div class="gx"><span class="ic">🕸️</span><div><b>Map access</b> <span>— who and what can reach each store.</span></div></div>
+        <div class="gx"><span class="ic">⚠️</span><div><b>Flag exposure</b> <span>— public buckets, over-shared files, data in the wrong place.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="em">“Do we even know where our crown jewels are?”</span></p>
+    </div>
+
+    <!-- 03 DLP -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">03</div><div class="ctitle">DLP <span class="t2">— Data Loss Prevention</span></div></div>
+      <p style="margin-bottom:6px">Inspects data <b>in motion / in use</b> and blocks or alerts on risky movement:</p>
+      <div class="chips">
+        <span class="chip">📧 email</span><span class="chip">🌐 web uploads</span><span class="chip">🔌 USB</span><span class="chip">💻 endpoints</span>
+      </div>
+      <p style="margin-top:8px">The <b>exit checkpoint</b> — it watches the doors data leaves through and decides: <span class="em">allow · alert · block</span>.</p>
+    </div>
+
+    <!-- 04 THE QUESTIONS EACH ANSWERS -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">04</div><div class="ctitle">The question each one answers</div></div>
+      <div class="trio" style="grid-template-columns:1fr 1fr">
+        <div class="mini"><h4 style="color:#3AD0B0">🗺️ DSPM asks</h4><p><b>“Where is it, and who can access it?”</b> — a live inventory &amp; exposure map of data at rest.</p></div>
+        <div class="mini"><h4 style="color:#FE9A3A">🚧 DLP asks</h4><p><b>“Stop it from leaving.”</b> — enforcement at the boundary as data moves.</p></div>
+      </div>
+      <p style="margin-top:9px"><span class="em">DSPM knows the terrain · DLP guards the gates.</span></p>
+    </div>
+
+    <!-- 05 WHY DSPM ROSE -->
+    <div class="card span2 c-green">
+      <div class="chead"><div class="num">05</div><div class="ctitle">Why DSPM rose <span class="t2">— you can't protect what you can't find</span></div></div>
+      <div class="steps">
+        <span class="step" style="border-color:#243b18;color:#81BB42">cloud + SaaS sprawl</span><span class="arrow" style="color:#8c8c8c">→</span>
+        <span class="step" style="border-color:#2b2b2b;color:#e7e7e7">data scattered everywhere</span><span class="arrow" style="color:#8c8c8c">→</span>
+        <span class="step" style="border-color:#2b2b2b;color:#e7e7e7">shadow &amp; forgotten stores</span><span class="arrow" style="color:#8c8c8c">→</span>
+        <span class="step" style="border-color:#1e3a52;color:#5AA9EC">DSPM to find it all</span>
+      </div>
+      <p style="margin-top:9px">Data spread across accounts, regions &amp; SaaS apps means no one has the full map. You cannot <b>DLP</b> — or govern — what you can't see. <span class="em">DSPM feeds DLP better targets.</span></p>
+    </div>
+
+    <!-- 06 COMPARISON TABLE -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Side by side <span class="t2">— DSPM vs DLP</span></div></div>
+      <table>
+        <tr><th>&nbsp;</th><th>DSPM</th><th>DLP</th></tr>
+        <tr><td class="k">Question</td><td>Where is it? Who can reach it?</td><td>Is it leaving? Should it?</td></tr>
+        <tr><td class="k">When</td><td>Data at rest — in your stores</td><td>Data in motion / in use — at the exit</td></tr>
+        <tr><td class="k">Acts on</td><td>Discovery · classification · access &amp; exposure</td><td>Movement — allow, alert or block</td></tr>
+        <tr><td class="k">Example</td><td>Finds a public bucket of customer PII</td><td>Blocks that PII from being emailed out</td></tr>
+      </table>
+      <p style="margin-top:7px"><span class="dim" style="color:#8c8c8c">Posture &amp; visibility (DSPM) sets up enforcement (DLP) — not either/or.</span></p>
+    </div>
+
+    <!-- 07 TOGETHER -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">07</div><div class="ctitle">Better together</div></div>
+      <div class="steps">
+        <span class="step">DSPM discovers</span><span class="arrow">→</span>
+        <span class="step">classifies</span><span class="arrow">→</span>
+        <span class="step">prioritizes</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#3a2d08;color:#E9BF35">DLP + access controls enforce</span>
+      </div>
+      <p style="margin-top:9px">Enforce on the data that actually matters — the crown jewels DSPM surfaced. <span class="em">DSPM makes DLP smarter: sharper targeting, less noise.</span></p>
+    </div>
+
+    <!-- 08 DATA FLOW DIAGRAM -->
+    <div class="card c-gold">
+      <div class="chead"><div class="num">08</div><div class="ctitle">At rest → in motion</div></div>
+      <svg viewBox="0 0 480 126" width="100%" style="display:block">
+        <!-- at rest: DSPM inventories + tags -->
+        <text x="12" y="15" fill="#3AD0B0" font-size="11.5" font-weight="700" font-family="Century Gothic, sans-serif">AT REST — DSPM tags</text>
+        <g font-family="Century Gothic, sans-serif" font-size="10.5" font-weight="700">
+          <rect x="12" y="26" width="150" height="82" rx="9" fill="#0c0c0c" stroke="#3AD0B0"/>
+          <rect x="26" y="40" width="122" height="18" rx="4" fill="#0f1b18" stroke="#2b2b2b"/><text x="34" y="53" fill="#fff" font-size="10">📄 file · PII</text>
+          <rect x="26" y="62" width="122" height="18" rx="4" fill="#0f1b18" stroke="#2b2b2b"/><text x="34" y="75" fill="#fff" font-size="10">🗄️ table · secrets</text>
+          <rect x="26" y="84" width="122" height="18" rx="4" fill="#0f1b18" stroke="#2b2b2b"/><text x="34" y="97" fill="#fff" font-size="10">🪣 bucket · PCI</text>
+        </g>
+        <!-- exit path -->
+        <text x="300" y="60" text-anchor="middle" fill="#8c8c8c" font-size="10" font-family="Century Gothic, sans-serif">moves to leave</text>
+        <path id="d08" d="M164,67 L380,67" fill="none" stroke="#2b2b2b" stroke-width="1.6"/>
+        <circle r="4" fill="#E9BF35"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#d08"/></animateMotion></circle>
+        <circle r="4" fill="#E9BF35"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite"><mpath href="#d08"/></animateMotion></circle>
+        <text x="270" y="80" text-anchor="middle" fill="#E9BF35" font-size="18" font-weight="800" font-family="Century Gothic, sans-serif">→</text>
+        <!-- in motion: DLP checks -->
+        <text x="380" y="15" fill="#E9BF35" font-size="11.5" font-weight="700" font-family="Century Gothic, sans-serif" text-anchor="middle">EXIT — DLP checks</text>
+        <g font-family="Century Gothic, sans-serif" font-size="10.5" font-weight="700">
+          <rect x="380" y="30" width="90" height="74" rx="9" fill="#1a1305" stroke="#E9BF35"/>
+          <text x="425" y="55" text-anchor="middle" fill="#E9BF35" font-size="20">🚧</text>
+          <text x="425" y="76" text-anchor="middle" fill="#fff" font-size="10">DLP gate</text>
+          <text x="425" y="92" text-anchor="middle" fill="#8c8c8c" font-size="9">allow·alert·block</text>
+        </g>
+        <text x="240" y="122" text-anchor="middle" fill="#bdbdbd" font-size="10" font-family="Century Gothic, sans-serif">DSPM inventories &amp; tags it · DLP checks it at the exit</text>
+      </svg>
+    </div>
+
+    <!-- 09 MOVEMENT CHECKPOINT DIAGRAM -->
+    <div class="card c-purple">
+      <div class="chead"><div class="num">09</div><div class="ctitle">The exit checkpoint</div></div>
+      <svg viewBox="0 0 480 126" width="100%" style="display:block">
+        <!-- inside -->
+        <text x="12" y="15" fill="#bdbdbd" font-size="10.5" font-weight="700" font-family="Century Gothic, sans-serif">INSIDE</text>
+        <rect x="12" y="24" width="96" height="60" rx="9" fill="#0c0c0c" stroke="#2b2b2b"/>
+        <text x="60" y="50" text-anchor="middle" fill="#fff" font-size="18">📦</text>
+        <text x="60" y="70" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-family="Century Gothic, sans-serif">tagged data</text>
+        <!-- to the DLP gate -->
+        <path id="d09" d="M108,54 L196,54" fill="none" stroke="#2b2b2b" stroke-width="1.6"/>
+        <circle r="3.6" fill="#9B5DE5"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#d09"/></animateMotion></circle>
+        <!-- the gate -->
+        <rect x="196" y="20" width="96" height="98" rx="10" fill="#150a1f" stroke="#9B5DE5"/>
+        <text x="244" y="44" text-anchor="middle" fill="#9B5DE5" font-size="20">🚧</text>
+        <text x="244" y="62" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Century Gothic, sans-serif">DLP inspect</text>
+        <text x="244" y="76" text-anchor="middle" fill="#8c8c8c" font-size="9" font-family="Century Gothic, sans-serif">match policy?</text>
+        <!-- branch: block -->
+        <path d="M292,44 L372,30" fill="none" stroke="#DF2E28" stroke-width="1.4"/>
+        <rect x="372" y="18" width="96" height="26" rx="7" fill="#1c0a09" stroke="#FF5A4D"/>
+        <text x="420" y="35" text-anchor="middle" fill="#FF5A4D" font-size="10.5" font-weight="700" font-family="Century Gothic, sans-serif">✋ BLOCK / alert</text>
+        <!-- branch: allow -->
+        <path id="d09b" d="M292,64 L372,78" fill="none" stroke="#2b2b2b" stroke-width="1.4"/>
+        <circle r="3.4" fill="#81BB42"><animateMotion dur="1.8s" begin="-.9s" repeatCount="indefinite"><mpath href="#d09b"/></animateMotion></circle>
+        <rect x="372" y="66" width="96" height="26" rx="7" fill="#0f1503" stroke="#81BB42"/>
+        <text x="420" y="83" text-anchor="middle" fill="#81BB42" font-size="10.5" font-weight="700" font-family="Century Gothic, sans-serif">✓ allow out</text>
+        <text x="240" y="122" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-family="Century Gothic, sans-serif">every exit — email · web · USB — passes the checkpoint</text>
+      </svg>
+    </div>
+
+    <!-- 10 WATCH OUT -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas" style="grid-template-columns:1fr 1fr; gap:5px 18px">
+        <div class="gx"><span class="ic">🙈</span><div><b>DLP without DSPM = blind</b> <span>— no map means false positives on the wrong data and missed shadow stores.</span></div></div>
+        <div class="gx"><span class="ic">📣</span><div><b>Noise burns out teams</b> <span>— untargeted DLP floods alerts; DSPM prioritization cuts the noise.</span></div></div>
+        <div class="gx"><span class="ic">🏷️</span><div><b>Classification is the hard part</b> <span>— getting “what is this data?” right is where both tools live or die.</span></div></div>
+        <div class="gx"><span class="ic">🚫</span><div><b>DSPM isn't a blocker</b> <span>— it's posture: it finds &amp; maps, it doesn't stop movement. You still need DLP + access controls.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big"><span class="em">DSPM</span> is your data inventory &amp; exposure map · <span class="em">DLP</span> is the movement control — <b>find and classify first, then enforce where it counts.</b></div>
+      <div class="flow2">
+        <span class="step">Discover</span><span class="arrow">→</span>
+        <span class="step">Classify</span><span class="arrow">→</span>
+        <span class="step">Map exposure</span><span class="arrow">→</span>
+        <span class="step">Enforce at the exit</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

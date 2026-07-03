@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASPM — Application Security Posture Management</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="aspm-poster.gif" download>GIF</a> · <a href="aspm-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>APPSEC <span class="b">POSTURE</span></h1>
+  <div class="sub">One prioritized, owned view of application risk — <b>ASPM</b> correlates a pile of scanner findings into a single ranked queue <span class="dim">(fix what's reachable &amp; exploitable, not what's merely “critical”)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 THE PROBLEM -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">01</div><div class="ctitle">The problem <span class="t2">— AppSec is a pile of scanners, each screaming in its own console</span></div></div>
+      <p style="margin-bottom:6px">Every tool — <b>SAST</b>, <b>DAST</b>, <b>SCA</b>, secrets, IaC, containers — fires thousands of findings into its own dashboard. The result:</p>
+      <div class="gotchas" style="grid-template-columns:1fr 1fr; gap:5px 16px">
+        <div class="gx"><span class="ic">🔊</span><div><b>Noise</b> <span>— tens of thousands of alerts, no signal on what matters.</span></div></div>
+        <div class="gx"><span class="ic">♊</span><div><b>Duplicates</b> <span>— the same bug reported by three different tools.</span></div></div>
+        <div class="gx"><span class="ic">🤷</span><div><b>No ownership</b> <span>— nobody knows which team should fix it.</span></div></div>
+        <div class="gx"><span class="ic">🎲</span><div><b>No priority</b> <span>— “critical” everywhere, so nothing is actually first.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 02 WHAT ASPM IS -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">02</div><div class="ctitle">What ASPM is <span class="t2">— the aggregation &amp; prioritization layer over your scanners</span></div></div>
+      <p><b>Application Security Posture Management</b> correlates and de-duplicates findings from <span class="em">all</span> your security tools — plus runtime signals and code ownership — into <span class="em">one prioritized application-risk view</span>. It doesn't scan; it makes sense of what the scanners found.</p>
+      <p style="margin-top:6px"><span class="dim" style="color:#8c8c8c">Think of it as the control tower: it sees every scanner, every app, and ranks the whole surface by real risk.</span></p>
+    </div>
+
+    <!-- 03 THE INPUTS — FUNNEL (ANIMATED) -->
+    <div class="card span2 c-teal">
+      <div class="chead"><div class="num">03</div><div class="ctitle">Many scanners → one queue <span class="t2">— findings funnel into ASPM, out comes a ranked backlog</span></div></div>
+      <svg viewBox="0 0 1000 210" width="100%" style="display:block">
+        <defs>
+          <path id="f1" d="M235,26 C400,26 470,92 560,100" fill="none" stroke="none"/>
+          <path id="f2" d="M235,54 C400,54 470,94 560,100" fill="none" stroke="none"/>
+          <path id="f3" d="M235,82 C420,82 480,96 560,100" fill="none" stroke="none"/>
+          <path id="f4" d="M235,110 L560,100" fill="none" stroke="none"/>
+          <path id="f5" d="M235,138 C420,138 480,104 560,100" fill="none" stroke="none"/>
+          <path id="f6" d="M235,166 C400,166 470,106 560,100" fill="none" stroke="none"/>
+          <path id="f7" d="M235,194 C400,194 470,108 560,100" fill="none" stroke="none"/>
+          <path id="fOut" d="M700,100 L960,100" fill="none" stroke="none"/>
+        </defs>
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <!-- source scanners -->
+          <rect x="20" y="14" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#5AA9EC"/><text x="30" y="30" fill="#5AA9EC">SAST · code</text>
+          <rect x="20" y="42" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#FE9A3A"/><text x="30" y="58" fill="#FE9A3A">DAST · running app</text>
+          <rect x="20" y="70" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#81BB42"/><text x="30" y="86" fill="#81BB42">SCA · dependencies</text>
+          <rect x="20" y="98" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#E9BF35"/><text x="30" y="114" fill="#E9BF35">Secrets scan</text>
+          <rect x="20" y="126" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#9B5DE5"/><text x="30" y="142" fill="#9B5DE5">IaC · config scan</text>
+          <rect x="20" y="154" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#3AD0B0"/><text x="30" y="170" fill="#3AD0B0">Container scan</text>
+          <rect x="20" y="182" width="215" height="24" rx="6" fill="#0c0c0c" stroke="#FF5A4D"/><text x="30" y="198" fill="#FF5A4D">Runtime signals</text>
+          <!-- feed lines -->
+          <g stroke="#2b2b2b" stroke-width="1.2" fill="none">
+            <use href="#f1"/><use href="#f2"/><use href="#f3"/><use href="#f4"/><use href="#f5"/><use href="#f6"/><use href="#f7"/>
+          </g>
+          <!-- travelling finding dots into the funnel -->
+          <circle r="3" fill="#5AA9EC"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#f1"/></animateMotion></circle>
+          <circle r="3" fill="#FE9A3A"><animateMotion dur="2.4s" begin="-.3s" repeatCount="indefinite"><mpath href="#f2"/></animateMotion></circle>
+          <circle r="3" fill="#81BB42"><animateMotion dur="2.4s" begin="-.6s" repeatCount="indefinite"><mpath href="#f3"/></animateMotion></circle>
+          <circle r="3" fill="#E9BF35"><animateMotion dur="2.4s" begin="-.9s" repeatCount="indefinite"><mpath href="#f4"/></animateMotion></circle>
+          <circle r="3" fill="#9B5DE5"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite"><mpath href="#f5"/></animateMotion></circle>
+          <circle r="3" fill="#3AD0B0"><animateMotion dur="2.4s" begin="-1.5s" repeatCount="indefinite"><mpath href="#f6"/></animateMotion></circle>
+          <circle r="3" fill="#FF5A4D"><animateMotion dur="2.4s" begin="-1.8s" repeatCount="indefinite"><mpath href="#f7"/></animateMotion></circle>
+          <!-- ASPM hub -->
+          <circle cx="630" cy="100" r="52" fill="#0e1512" stroke="#3AD0B0" stroke-width="2"/>
+          <text x="630" y="96" text-anchor="middle" fill="#3AD0B0" font-size="18" font-weight="800">ASPM</text>
+          <text x="630" y="114" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">correlate · rank</text>
+          <!-- output queue -->
+          <line x1="700" y1="100" x2="960" y2="100" stroke="#2b2b2b" stroke-width="2"/>
+          <circle r="6" fill="#E9BF35" opacity=".28"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#fOut"/></animateMotion></circle>
+          <circle r="3.4" fill="#fff"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#fOut"/></animateMotion></circle>
+          <rect x="762" y="66" width="198" height="68" rx="9" fill="#1a1305" stroke="#E9BF35"/>
+          <text x="861" y="86" text-anchor="middle" fill="#E9BF35" font-size="12" font-weight="800">ONE RANKED QUEUE</text>
+          <text x="861" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">de-duped · prioritized</text>
+          <text x="861" y="120" text-anchor="middle" fill="#bdbdbd" font-size="10">assigned to a team</text>
+        </g>
+      </svg>
+      <p style="margin-top:5px" class="lead">Seven noisy consoles collapse into <b>one</b> backlog — each item a real issue, ranked, with an owner.</p>
+    </div>
+
+    <!-- 04 WHAT IT ADDS -->
+    <div class="card c-purple">
+      <div class="chead"><div class="num">04</div><div class="ctitle">What ASPM adds</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🔗</span><div><b>Correlation</b> <span>— the same bug from 3 tools becomes one issue.</span></div></div>
+        <div class="gx"><span class="ic">🎯</span><div><b>Prioritization</b> <span>— reachable + exploitable + exposed rises to the top.</span></div></div>
+        <div class="gx"><span class="ic">👤</span><div><b>Ownership</b> <span>— routed to the team that can actually fix it.</span></div></div>
+        <div class="gx"><span class="ic">🗺️</span><div><b>Coverage</b> <span>— which apps have <i>no</i> scanning at all.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 05 PRIORITIZE BY REAL RISK -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">05</div><div class="ctitle">Prioritize by real risk</div></div>
+      <p style="margin-bottom:6px">Not raw severity counts — a “critical” in dead, unreachable code isn't urgent. Rank by:</p>
+      <div class="steps">
+        <span class="step" style="border-color:#3a2a10;color:#FE9A3A">Reachable?</span><span class="arrow">·</span>
+        <span class="step" style="border-color:#3a2a10;color:#FE9A3A">Exploitable?</span><span class="arrow">·</span>
+        <span class="step" style="border-color:#3a2a10;color:#FE9A3A">Internet-exposed?</span><span class="arrow">·</span>
+        <span class="step" style="border-color:#3a2a10;color:#FE9A3A">Business-critical?</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">All four true = fix now. Severity alone is a bad queue.</span></p>
+    </div>
+
+    <!-- 06 OWNERSHIP + WORKFLOW -->
+    <div class="card span2 c-green">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Ownership &amp; workflow <span class="t2">— route → track → measure the burndown</span></div></div>
+      <svg viewBox="0 0 1000 92" width="100%" style="display:block">
+        <line x1="90" y1="50" x2="910" y2="50" stroke="#2b2b2b" stroke-width="2"/>
+        <path id="wfLoop" d="M90,50 L910,50" fill="none" stroke="none"/>
+        <circle r="6" fill="#81BB42" opacity=".28"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#wfLoop"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#wfLoop"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif">
+          <g><circle class="tlDot" cx="130" cy="50" r="6" fill="#5AA9EC" style="animation-delay:0s"/>
+            <text x="130" y="32" text-anchor="middle" fill="#5AA9EC" font-size="12" font-weight="800">1 · Route</text>
+            <text x="130" y="74" text-anchor="middle" fill="#8c8c8c" font-size="9.5">right issue → right team</text></g>
+          <g><circle class="tlDot" cx="390" cy="50" r="6" fill="#9B5DE5" style="animation-delay:.6s"/>
+            <text x="390" y="32" text-anchor="middle" fill="#9B5DE5" font-size="12" font-weight="800">2 · Track SLAs</text>
+            <text x="390" y="74" text-anchor="middle" fill="#8c8c8c" font-size="9.5">time-to-fix by severity</text></g>
+          <g><circle class="tlDot" cx="640" cy="50" r="6" fill="#FE9A3A" style="animation-delay:1.2s"/>
+            <text x="640" y="32" text-anchor="middle" fill="#FE9A3A" font-size="12" font-weight="800">3 · Burndown</text>
+            <text x="640" y="74" text-anchor="middle" fill="#8c8c8c" font-size="9.5">risk trending down?</text></g>
+          <g><circle class="tlDot" cx="880" cy="50" r="6" fill="#3AD0B0" style="animation-delay:1.8s"/>
+            <text x="880" y="32" text-anchor="middle" fill="#3AD0B0" font-size="12" font-weight="800">4 · Report</text>
+            <text x="880" y="74" text-anchor="middle" fill="#8c8c8c" font-size="9.5">posture over time</text></g>
+        </g>
+      </svg>
+    </div>
+
+    <!-- 07 SCANNERS vs ASPM (TABLE) -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">07</div><div class="ctitle">AppSec scanners vs ASPM <span class="t2">— they <b>find</b>; ASPM <b>correlates, ranks &amp; assigns</b></span></div></div>
+      <table>
+        <tr><th>Dimension</th><th>Individual scanner (SAST/DAST/SCA…)</th><th>ASPM</th></tr>
+        <tr><td class="k">Job</td><td>Finds issues in <b>one</b> dimension</td><td class="win">Aggregates across <b>all</b> tools</td></tr>
+        <tr><td class="k">Duplicates</td><td>Reports the same bug again</td><td class="win">De-duplicates to one issue</td></tr>
+        <tr><td class="k">Priority</td><td>Its own severity, in isolation</td><td class="win">Reachable · exploitable · exposed</td></tr>
+        <tr><td class="k">Ownership</td><td>None — a list in a console</td><td class="win">Routed to a responsible team</td></tr>
+        <tr><td class="k">Coverage</td><td>Blind to what it doesn't scan</td><td class="win">Shows apps with no scanning</td></tr>
+      </table>
+    </div>
+
+    <!-- 08 WHERE IT FITS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">08</div><div class="ctitle">Where it fits</div></div>
+      <p style="margin-bottom:7px">ASPM is the <b>*SPM</b> for the software you <i>build</i> — sibling to the posture families for cloud and data:</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🛡️</span><div><b>ASPM</b> <span>— the applications &amp; code you ship.</span></div></div>
+        <div class="gx"><span class="ic">☁️</span><div><b>CNAPP / CSPM</b> <span>— the cloud you run on.</span></div></div>
+        <div class="gx"><span class="ic">🗄️</span><div><b>DSPM</b> <span>— the data you hold.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 09 WATCH OUT -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🗑️</span><div><b>Garbage in</b> <span>— a badly-configured scanner still misses things; ASPM only ranks what it's fed.</span></div></div>
+        <div class="gx"><span class="ic">🔧</span><div><b>It prioritizes, it doesn't fix</b> <span>— humans and pipelines still do the remediation.</span></div></div>
+        <div class="gx"><span class="ic">🧭</span><div><b>Needs a good map</b> <span>— accurate asset &amp; ownership data, or routing &amp; coverage break.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 10 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">10</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">ASPM turns a <span class="em">flood of scanner findings</span> into <span class="em">one prioritized, owned queue</span> — fix what's reachable and exploitable, not what's merely “critical.”</div>
+      <div class="flow2">
+        <span class="step">Aggregate every tool</span><span class="arrow">→</span>
+        <span class="step">De-dupe</span><span class="arrow">→</span>
+        <span class="step">Rank by real risk</span><span class="arrow">→</span>
+        <span class="step">Assign &amp; burn down</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

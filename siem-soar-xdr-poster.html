@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIEM vs SOAR vs XDR — The SecOps Stack</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="siem-soar-xdr-poster.gif" download>GIF</a> · <a href="siem-soar-xdr-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>SIEM · SOAR · <span class="b">XDR</span></h1>
+  <div class="sub">The SecOps stack, untangled — one <b>collects &amp; detects</b>, one <b>automates &amp; responds</b>, one does <b>integrated detect + respond</b> <span class="dim">(three acronyms people mix up, one job each)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 OVERVIEW -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">Three acronyms, one job each <span class="t2">— collect · automate · integrate</span></div></div>
+      <svg viewBox="0 0 1000 140" width="100%" style="display:block">
+        <g font-family="Century Gothic, sans-serif" font-weight="700">
+          <!-- SIEM -->
+          <rect x="24" y="30" width="288" height="74" rx="10" fill="#0c1622" stroke="#5AA9EC"/>
+          <text x="168" y="54" text-anchor="middle" fill="#5AA9EC" font-size="17" font-weight="800">SIEM</text>
+          <text x="168" y="74" text-anchor="middle" fill="#e9e9e9" font-size="11">COLLECTS logs + DETECTS</text>
+          <text x="168" y="90" text-anchor="middle" fill="#8c8c8c" font-size="10">aggregation &amp; detection hub</text>
+          <!-- SOAR -->
+          <rect x="356" y="30" width="288" height="74" rx="10" fill="#0b1a17" stroke="#3AD0B0"/>
+          <text x="500" y="54" text-anchor="middle" fill="#3AD0B0" font-size="17" font-weight="800">SOAR</text>
+          <text x="500" y="74" text-anchor="middle" fill="#e9e9e9" font-size="11">AUTOMATES the RESPONSE</text>
+          <text x="500" y="90" text-anchor="middle" fill="#8c8c8c" font-size="10">playbooks across your tools</text>
+          <!-- XDR -->
+          <rect x="688" y="30" width="288" height="74" rx="10" fill="#17102a" stroke="#9B5DE5"/>
+          <text x="832" y="54" text-anchor="middle" fill="#9B5DE5" font-size="17" font-weight="800">XDR</text>
+          <text x="832" y="74" text-anchor="middle" fill="#e9e9e9" font-size="11">DETECT + RESPOND, integrated</text>
+          <text x="832" y="90" text-anchor="middle" fill="#8c8c8c" font-size="10">one vendor, out of the box</text>
+          <!-- travelling dot along the row -->
+          <path id="ov1" d="M24,15 L976,15" fill="none" stroke="none"/>
+          <line x1="24" y1="15" x2="976" y2="15" stroke="#2b2b2b" stroke-width="1.3"/>
+          <circle r="3.4" fill="#E9BF35"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#ov1"/></animateMotion></circle>
+          <text x="120" y="128" text-anchor="middle" fill="#5AA9EC" font-size="10">what happened?</text>
+          <text x="500" y="128" text-anchor="middle" fill="#3AD0B0" font-size="10">do something about it</text>
+          <text x="870" y="128" text-anchor="middle" fill="#9B5DE5" font-size="10">both, bundled</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">SIEM and SOAR are the <b>build-it-yourself</b> pairing; XDR is the <b>turnkey</b> bundle from a single vendor — same goal, different trade-off.</p>
+    </div>
+
+    <!-- 02 SIEM -->
+    <div class="card c-gold">
+      <div class="chead"><div class="num">02</div><div class="ctitle">SIEM <span class="t2">— Security Information &amp; Event Management</span></div></div>
+      <p style="margin-bottom:6px">Ingests &amp; <b>correlates logs from everywhere</b> — endpoints, network, cloud, apps — then runs detection rules &amp; analytics and <b>raises alerts</b>.</p>
+      <div class="steps">
+        <span class="step" style="border-color:#1e3a52;color:#5AA9EC">ingest logs</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#3a2d08;color:#E9BF35">correlate</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#2a0e0c;color:#FF5A4D">alert</span>
+      </div>
+      <p style="margin-top:8px"><span class="em">The aggregation + detection hub — broad reach, but DIY to build and tune.</span></p>
+    </div>
+
+    <!-- 03 SOAR -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">03</div><div class="ctitle">SOAR <span class="t2">— Orchestration, Automation &amp; Response</span></div></div>
+      <p style="margin-bottom:6px"><b>Playbooks</b> that automate &amp; orchestrate the response across your tools — no analyst clicking through five consoles.</p>
+      <div class="steps">
+        <span class="step">enrich</span><span class="arrow">→</span>
+        <span class="step">contain</span><span class="arrow">→</span>
+        <span class="step">open ticket</span>
+      </div>
+      <p style="margin-top:8px"><span class="em">Cuts manual toil — it runs the response, it doesn't find the threat.</span></p>
+    </div>
+
+    <!-- 04 XDR -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">04</div><div class="ctitle">XDR <span class="t2">— Extended Detection &amp; Response, one vendor's ecosystem</span></div></div>
+      <p style="margin-bottom:6px">Vendor-integrated <b>detection + response</b> across the layers, with correlated telemetry &amp; built-in detections <span class="em">out of the box</span>:</p>
+      <div class="chips">
+        <span class="chip">endpoint</span><span class="chip">network</span><span class="chip">cloud</span><span class="chip">identity</span><span class="chip">email</span>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">One console, prebuilt correlation &amp; playbooks — less to assemble, but you live inside that vendor's stack.</span></p>
+    </div>
+
+    <!-- 05 COMPARISON TABLE -->
+    <div class="card span2 c-orange">
+      <div class="chead"><div class="num">05</div><div class="ctitle">Side by side <span class="t2">— the one-line comparison</span></div></div>
+      <table>
+        <tr><th></th><th style="color:#5AA9EC">SIEM</th><th style="color:#3AD0B0">SOAR</th><th style="color:#9B5DE5">XDR</th></tr>
+        <tr><td class="k">What it does</td><td>Collect logs + detect</td><td>Automate the response</td><td>Detect + respond, integrated</td></tr>
+        <tr><td class="k">Scope</td><td>Any log source</td><td>Your existing tools</td><td>One vendor's telemetry</td></tr>
+        <tr><td class="k">Effort</td><td>High — you build detections</td><td>Medium — build playbooks</td><td>Low — prebuilt, turnkey</td></tr>
+        <tr><td class="k">Strength</td><td class="win">Breadth &amp; flexibility</td><td class="win">Speed &amp; less toil</td><td class="win">Correlation out of the box</td></tr>
+      </table>
+      <p style="margin-top:7px"><span class="em">SIEM sees the most; SOAR acts the fastest; XDR gives you both with the least assembly.</span></p>
+    </div>
+
+    <!-- 06 HOW THEY WORK TOGETHER -->
+    <div class="card span2 c-green">
+      <div class="chead"><div class="num">06</div><div class="ctitle">How they fit together <span class="t2">— detect → automate → analyst; XDR bundles it</span></div></div>
+      <svg viewBox="0 0 1000 172" width="100%" style="display:block">
+        <line x1="70" y1="70" x2="640" y2="70" stroke="#2b2b2b" stroke-width="2"/>
+        <path id="flow" d="M70,70 L640,70" fill="none" stroke="none"/>
+        <circle r="6" fill="#E9BF35" opacity=".28"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#flow"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#flow"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif">
+          <g><circle class="tlDot" cx="120" cy="70" r="7" fill="#5AA9EC" style="animation-delay:0s"/>
+            <text x="120" y="42" text-anchor="middle" fill="#5AA9EC" font-size="12.5" font-weight="800">SIEM</text>
+            <text x="120" y="96" text-anchor="middle" fill="#bdbdbd" font-size="10">detects the threat</text>
+            <text x="120" y="110" text-anchor="middle" fill="#8c8c8c" font-size="9.5">correlated alert</text></g>
+          <g><circle class="tlDot" cx="355" cy="70" r="7" fill="#3AD0B0" style="animation-delay:.6s"/>
+            <text x="355" y="42" text-anchor="middle" fill="#3AD0B0" font-size="12.5" font-weight="800">SOAR</text>
+            <text x="355" y="96" text-anchor="middle" fill="#bdbdbd" font-size="10">automates the response</text>
+            <text x="355" y="110" text-anchor="middle" fill="#8c8c8c" font-size="9.5">enrich · contain · ticket</text></g>
+          <g><circle class="tlDot" cx="590" cy="70" r="7" fill="#81BB42" style="animation-delay:1.2s"/>
+            <text x="590" y="42" text-anchor="middle" fill="#81BB42" font-size="12.5" font-weight="800">Analyst</text>
+            <text x="590" y="96" text-anchor="middle" fill="#bdbdbd" font-size="10">both feed the SOC team</text>
+            <text x="590" y="110" text-anchor="middle" fill="#8c8c8c" font-size="9.5">decide · investigate</text></g>
+          <!-- XDR wrap -->
+          <rect x="700" y="30" width="276" height="112" rx="11" fill="#17102a" stroke="#9B5DE5" stroke-dasharray="5 4"/>
+          <text x="838" y="58" text-anchor="middle" fill="#9B5DE5" font-size="13" font-weight="800">XDR</text>
+          <text x="838" y="80" text-anchor="middle" fill="#e9e9e9" font-size="10.5" font-weight="700">detect + respond</text>
+          <text x="838" y="98" text-anchor="middle" fill="#bdbdbd" font-size="10">the same two jobs, but</text>
+          <text x="838" y="114" text-anchor="middle" fill="#bdbdbd" font-size="10">bundled in one vendor's</text>
+          <text x="838" y="130" text-anchor="middle" fill="#bdbdbd" font-size="10">ecosystem</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px"><span class="em">SIEM + SOAR is the assembled pipeline; XDR is that same pipeline pre-wired by a single vendor.</span></p>
+    </div>
+
+    <!-- 07 SIEM vs XDR -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">07</div><div class="ctitle">SIEM vs XDR</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🧱</span><div><b>SIEM</b> <span>— any log source; <b>you build</b> the detections. Flexible, but heavy to run.</span></div></div>
+        <div class="gx"><span class="ic">📦</span><div><b>XDR</b> <span>— curated telemetry + <b>prebuilt</b> detections. Turnkey, less flexible, vendor-bound.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">Breadth &amp; control vs speed &amp; simplicity — the core SIEM-vs-XDR choice.</span></p>
+    </div>
+
+    <!-- 08 METRICS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">08</div><div class="ctitle">Metrics they move</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">⏱️</span><div><b>MTTD</b> <span>— Mean Time to <b>Detect</b>. Better detection (SIEM · XDR) shrinks it.</span></div></div>
+        <div class="gx"><span class="ic">🛠️</span><div><b>MTTR</b> <span>— Mean Time to <b>Respond</b>. Automation (SOAR · XDR) shrinks it.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="em">Automation pulls both curves down — detect faster, respond faster.</span></p>
+    </div>
+
+    <!-- 09 WATCH OUT -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Watch out <span class="t2">— the tool is only half the job</span></div></div>
+      <div class="gotchas" style="grid-template-columns:1fr 1fr; gap:5px 22px">
+        <div class="gx"><span class="ic">🗑️</span><div><b>Garbage in, garbage out</b> <span>— SIEM is only as good as your log coverage &amp; tuning.</span></div></div>
+        <div class="gx"><span class="ic">🥀</span><div><b>Playbook rot</b> <span>— SOAR automations break when tools &amp; APIs change; maintain them.</span></div></div>
+        <div class="gx"><span class="ic">🔒</span><div><b>Vendor lock-in</b> <span>— XDR ties you to one ecosystem; hard to bring your own tools.</span></div></div>
+        <div class="gx"><span class="ic">🔔</span><div><b>Alert fatigue</b> <span>— the real enemy: too many alerts, none triaged. Tune ruthlessly.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 10 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">10</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">SIEM <span class="em">collects + detects</span>, SOAR <span class="em">automates + responds</span>, XDR does <span class="em">integrated detect + respond</span> — pick <b>DIY breadth</b> (SIEM + SOAR) or <b>turnkey depth</b> (XDR).</div>
+      <div class="flow2">
+        <span class="step">Collect &amp; detect</span><span class="arrow">→</span>
+        <span class="step">Automate &amp; respond</span><span class="arrow">→</span>
+        <span class="step">Or bundle both (XDR)</span><span class="arrow">→</span>
+        <span class="step">Shrink MTTD &amp; MTTR</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

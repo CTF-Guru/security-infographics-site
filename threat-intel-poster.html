@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threat Intelligence</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="threat-intel-poster.gif" download>GIF</a> · <a href="threat-intel-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>THREAT <span class="b">INTELLIGENCE</span></h1>
+  <div class="sub">Evidence-based knowledge about threats — <b>who</b> is attacking, <b>how</b>, and with <b>what</b> — turned into better defensive decisions <span class="dim">(intelligence, not just a firehose of data)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 WHAT IT IS -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">What it is <span class="t2">— data becomes intelligence when it drives a decision</span></div></div>
+      <svg viewBox="0 0 1000 92" width="100%" style="display:block">
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="20" y="30" width="150" height="32" rx="7" fill="#0c0c0c" stroke="#2b2b2b"/><text x="95" y="50" text-anchor="middle" fill="#bdbdbd">raw data</text>
+          <line x1="170" y1="46" x2="300" y2="46" stroke="#2b2b2b" stroke-width="1.3"/>
+          <rect x="300" y="30" width="180" height="32" rx="7" fill="#0c0c0c" stroke="#2b2b2b"/><text x="390" y="50" text-anchor="middle" fill="#bdbdbd">+ context &amp; analysis</text>
+          <line x1="480" y1="46" x2="610" y2="46" stroke="#2b2b2b" stroke-width="1.3"/>
+          <rect x="610" y="28" width="180" height="36" rx="8" fill="#0d1526" stroke="#5AA9EC"/><text x="700" y="50" text-anchor="middle" fill="#5AA9EC">intelligence</text>
+          <line x1="790" y1="46" x2="880" y2="46" stroke="#2b2b2b" stroke-width="1.3"/>
+          <rect x="880" y="28" width="100" height="36" rx="8" fill="#0d1305" stroke="#81BB42"/><text x="930" y="50" text-anchor="middle" fill="#81BB42">a decision</text>
+          <path id="tiFlow01" d="M170,46 L880,46" fill="none" stroke="none"/>
+          <circle r="3.4" fill="#5AA9EC"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#tiFlow01"/></animateMotion></circle>
+          <text x="95" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">IPs · hashes · reports</text>
+          <text x="390" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">who · why · relevance</text>
+          <text x="700" y="80" text-anchor="middle" fill="#8c8c8c" font-size="9.5">actionable · relevant</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">Threat intel is knowledge about adversaries and their behaviour, gathered and analysed so <span class="em">defenders</span> can act — not a passive feed to store.</p>
+    </div>
+
+    <!-- 02 THE FOUR TYPES -->
+    <div class="card span2 c-teal">
+      <div class="chead"><div class="num">02</div><div class="ctitle">The four types <span class="t2">— sliced by <b>audience</b> &amp; time horizon</span></div></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:7px; margin-top:1px">
+        <div class="mini"><h4 style="color:#9B5DE5">🏛️ Strategic</h4><p>Trends &amp; risk for <b>leadership</b> — the big picture, business language.</p><span class="ex">who targets us &amp; why</span></div>
+        <div class="mini"><h4 style="color:#FE9A3A">🎯 Operational</h4><p>Specific <b>campaigns &amp; actors</b> — the imminent, named threat.</p><span class="ex">this group, this campaign</span></div>
+        <div class="mini"><h4 style="color:#3AD0B0">🛠️ Tactical</h4><p><b>TTPs</b> for the SOC &amp; defenders — how attacks actually work.</p><span class="ex">techniques &amp; behaviour</span></div>
+        <div class="mini"><h4 style="color:#5AA9EC">🔬 Technical</h4><p><b>IOCs</b> — hashes, IPs, domains to feed tooling right now.</p><span class="ex">machine-readable indicators</span></div>
+      </div>
+      <p style="margin-top:9px"><span class="em">Higher = broader &amp; longer-lived (people); lower = narrower &amp; shorter-lived (machines).</span></p>
+    </div>
+
+    <!-- 03 PYRAMID OF PAIN -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">03</div><div class="ctitle">The Pyramid of Pain <span class="t2">— how much it <b>hurts the attacker</b> when you detect at each level</span></div></div>
+      <svg viewBox="0 0 1000 250" width="100%" style="display:block">
+        <g font-family="Century Gothic, sans-serif" font-weight="800">
+          <!-- pyramid tiers, apex = most pain -->
+          <polygon points="500,12 560,48 440,48" fill="#1a0a0a" stroke="#FF5A4D"/>
+          <text x="500" y="40" text-anchor="middle" fill="#FF5A4D" font-size="13">TTPs</text>
+          <polygon points="440,52 560,52 605,88 395,88" fill="#1a1305" stroke="#E9BF35"/>
+          <text x="500" y="76" text-anchor="middle" fill="#E9BF35" font-size="12">Tools</text>
+          <polygon points="395,92 605,92 650,128 350,128" fill="#0d1305" stroke="#81BB42"/>
+          <text x="500" y="116" text-anchor="middle" fill="#81BB42" font-size="12">Network / Host Artifacts</text>
+          <polygon points="350,132 650,132 695,168 305,168" fill="#0f1a12" stroke="#3AD0B0"/>
+          <text x="500" y="156" text-anchor="middle" fill="#3AD0B0" font-size="12">Domain Names</text>
+          <polygon points="305,172 695,172 740,208 260,208" fill="#0d1526" stroke="#5AA9EC"/>
+          <text x="500" y="196" text-anchor="middle" fill="#5AA9EC" font-size="12">IP Addresses</text>
+          <polygon points="260,212 740,212 770,240 230,240" fill="#131313" stroke="#6a6a6a"/>
+          <text x="500" y="231" text-anchor="middle" fill="#bdbdbd" font-size="12">Hash Values</text>
+        </g>
+        <g font-family="Century Gothic, sans-serif" font-weight="700">
+          <!-- pain axis, right -->
+          <text x="835" y="34" fill="#FF5A4D" font-size="12">😫 TOUGH!</text>
+          <text x="812" y="52" fill="#8c8c8c" font-size="9.5">must rebuild how they operate</text>
+          <text x="835" y="232" fill="#6a6a6a" font-size="12">😐 trivial</text>
+          <text x="812" y="216" fill="#8c8c8c" font-size="9.5">swapped in seconds</text>
+          <!-- travelling arrow up the pain axis -->
+          <line x1="800" y1="226" x2="800" y2="44" stroke="#2b2b2b" stroke-width="2"/>
+          <path id="tiPain" d="M800,226 L800,44" fill="none" stroke="none"/>
+          <circle r="4" fill="#FF5A4D"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#tiPain"/></animateMotion></circle>
+          <text x="180" y="130" text-anchor="middle" fill="#8c8c8c" font-size="9.5" transform="rotate(-90 180 130)">more pain to change →</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">Hashes &amp; IPs are disposable — an attacker changes them for free. Force detection up to <span class="em">TTPs</span> and they must re-tool their whole operation.</p>
+    </div>
+
+    <!-- 04 IOCs vs TTPs -->
+    <div class="card c-gold">
+      <div class="chead"><div class="num">04</div><div class="ctitle">IOCs vs TTPs</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🧩</span><div><b>IOCs</b> <span>— indicators (hashes, IPs, domains). <b>Cheap</b> for the attacker to swap; go stale fast.</span></div></div>
+        <div class="gx"><span class="ic">🎭</span><div><b>TTPs</b> <span>— tactics, techniques &amp; procedures. <b>Expensive</b> to change; describe behaviour.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="em">Durable detections target behaviour, not disposable strings.</span></p>
+    </div>
+
+    <!-- 05 SOURCES -->
+    <div class="card c-green">
+      <div class="chead"><div class="num">05</div><div class="ctitle">Where it comes from</div></div>
+      <div class="chips">
+        <span class="chip">OSINT</span><span class="chip">commercial feeds</span><span class="chip">ISACs / sharing</span><span class="chip">dark web</span><span class="chip">internal telemetry</span><span class="chip">MITRE ATT&amp;CK</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">Your own telemetry is the most relevant source you have — it's about attacks on you.</span></p>
+    </div>
+
+    <!-- 06 THE INTELLIGENCE LIFECYCLE (HERO LOOP) -->
+    <div class="card span2 c-orange">
+      <div class="chead"><div class="num">06</div><div class="ctitle">The intelligence lifecycle <span class="t2">— a loop, not a pipeline · <b>feedback</b> steers the next cycle</span></div></div>
+      <svg viewBox="0 0 1000 178" width="100%" style="display:block">
+        <!-- ring the dot travels -->
+        <ellipse cx="500" cy="89" rx="410" ry="62" fill="none" stroke="#2b2b2b" stroke-width="2"/>
+        <path id="tiCycle" d="M910,89 A410,62 0 1,1 909.99,89" fill="none" stroke="none"/>
+        <circle r="6" fill="#FE9A3A" opacity=".28"><animateMotion dur="4.2s" repeatCount="indefinite"><mpath href="#tiCycle"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="4.2s" repeatCount="indefinite"><mpath href="#tiCycle"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif">
+          <!-- 6 nodes around the ellipse -->
+          <g><circle class="tlDot" cx="910" cy="89" r="7" fill="#5AA9EC" style="animation-delay:0s"/>
+            <text x="910" y="79" text-anchor="end" fill="#5AA9EC" font-size="12.5" font-weight="800">1 · Direction</text>
+            <text x="910" y="109" text-anchor="end" fill="#8c8c8c" font-size="9.5">what must we answer?</text></g>
+          <g><circle class="tlDot" cx="705" cy="30" r="7" fill="#3AD0B0" style="animation-delay:.7s"/>
+            <text x="705" y="20" text-anchor="middle" fill="#3AD0B0" font-size="12.5" font-weight="800">2 · Collection</text>
+            <text x="705" y="48" text-anchor="middle" fill="#8c8c8c" font-size="9.5">gather the sources</text></g>
+          <g><circle class="tlDot" cx="295" cy="30" r="7" fill="#9B5DE5" style="animation-delay:1.4s"/>
+            <text x="295" y="20" text-anchor="middle" fill="#9B5DE5" font-size="12.5" font-weight="800">3 · Processing</text>
+            <text x="295" y="48" text-anchor="middle" fill="#8c8c8c" font-size="9.5">normalise · dedupe</text></g>
+          <g><circle class="tlDot" cx="90" cy="89" r="7" fill="#E9BF35" style="animation-delay:2.1s"/>
+            <text x="90" y="79" text-anchor="start" fill="#E9BF35" font-size="12.5" font-weight="800">4 · Analysis</text>
+            <text x="90" y="109" text-anchor="start" fill="#8c8c8c" font-size="9.5">turn data → meaning</text></g>
+          <g><circle class="tlDot" cx="295" cy="148" r="7" fill="#81BB42" style="animation-delay:2.8s"/>
+            <text x="295" y="138" text-anchor="middle" fill="#81BB42" font-size="12.5" font-weight="800">5 · Dissemination</text>
+            <text x="295" y="166" text-anchor="middle" fill="#8c8c8c" font-size="9.5">right report, right team</text></g>
+          <g><circle class="tlDot" cx="705" cy="148" r="7" fill="#FF5A4D" style="animation-delay:3.5s"/>
+            <text x="705" y="138" text-anchor="middle" fill="#FF5A4D" font-size="12.5" font-weight="800">6 · Feedback</text>
+            <text x="705" y="166" text-anchor="middle" fill="#8c8c8c" font-size="9.5">was it useful? refine</text></g>
+        </g>
+      </svg>
+      <p style="margin-top:6px"><span class="em">Feedback closes the loop — each cycle sharpens Direction so the intel gets more relevant over time.</span></p>
+    </div>
+
+    <!-- 07 HOW IT'S USED -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">07</div><div class="ctitle">How it's used</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🔍</span><div><b>Enrich alerts</b> <span>— add context so triage knows what it's looking at.</span></div></div>
+        <div class="gx"><span class="ic">🕸️</span><div><b>Detections &amp; hunting</b> <span>— drive rules; go looking before an alert fires.</span></div></div>
+        <div class="gx"><span class="ic">🗺️</span><div><b>Map to ATT&amp;CK</b> <span>— frame activity as known techniques.</span></div></div>
+        <div class="gx"><span class="ic">🩹</span><div><b>Prioritize patching</b> <span>— is it actually being exploited?</span></div></div>
+        <div class="gx"><span class="ic">📋</span><div><b>Brief leadership</b> <span>— relevant risk, in business terms.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 08 WHAT GOOD LOOKS LIKE -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">08</div><div class="ctitle">What good intel looks like</div></div>
+      <div class="steps">
+        <span class="step" style="border-color:#134a3f;color:#3AD0B0">Relevant</span><span class="arrow">·</span>
+        <span class="step" style="border-color:#134a3f;color:#3AD0B0">Timely</span><span class="arrow">·</span>
+        <span class="step" style="border-color:#134a3f;color:#3AD0B0">Actionable</span>
+      </div>
+      <table style="margin-top:8px">
+        <tr><th>Trait</th><th>Means</th></tr>
+        <tr><td class="k">Relevant</td><td class="win">to YOUR industry, stack &amp; adversaries</td></tr>
+        <tr><td class="k">Timely</td><td class="win">arrives while you can still act</td></tr>
+        <tr><td class="k">Actionable</td><td class="win">tells you what to <i>do</i>, not just what exists</td></tr>
+      </table>
+    </div>
+
+    <!-- 09 WATCH OUT -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Watch out <span class="t2">— the ways threat-intel programs waste effort</span></div></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px 16px">
+        <div class="gx"><span class="ic">⏳</span><div><b>Stale IOC feeds</b> <span>— indicators age fast and drown you in noise &amp; false positives.</span></div></div>
+        <div class="gx"><span class="ic">🗄️</span><div><b>Intel without action</b> <span>— a feed nobody operationalises is just expensive trivia.</span></div></div>
+        <div class="gx"><span class="ic">🌊</span><div><b>Volume over relevance</b> <span>— a firehose you can't act on is worse than a few facts you can.</span></div></div>
+        <div class="gx"><span class="ic">🕵️</span><div><b>Attribution theatre</b> <span>— chasing "who" for its own sake, over defending against "how".</span></div></div>
+      </div>
+    </div>
+
+    <!-- 10 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">10</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">Threat intelligence turns <span class="em">"what's out there"</span> into <span class="em">"what we should do"</span> — favour durable <b>TTPs</b> over disposable <b>IOCs</b>, and keep it relevant, timely &amp; actionable.</div>
+      <div class="flow2">
+        <span class="step">Know the threat</span><span class="arrow">→</span>
+        <span class="step">Detect behaviour</span><span class="arrow">→</span>
+        <span class="step">Act on it</span><span class="arrow">→</span>
+        <span class="step">Feed back &amp; refine</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSPM vs CWPP vs CIEM vs CDR — Cloud Security Pillars</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="cspm-cwpp-ciem-cdr-poster.gif" download>GIF</a> · <a href="cspm-cwpp-ciem-cdr-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>CLOUD SECURITY <span class="b">PILLARS</span></h1>
+  <div class="sub">CSPM · CWPP · CIEM · CDR — four lenses on cloud risk: is it <b>configured</b> right, are the <b>workloads</b> protected, who <b>can do what</b>, and is something <b>attacking now</b> <span class="dim">(usually bundled into one CNAPP)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 OVERVIEW -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">Four questions about cloud security <span class="t2">— one pillar answers each</span></div></div>
+      <svg viewBox="0 0 1000 148" width="100%" style="display:block">
+        <text x="500" y="15" text-anchor="middle" fill="#8c8c8c" font-size="10.5" font-weight="700" font-family="Century Gothic, sans-serif">the same cloud, seen four ways</text>
+        <g font-family="Century Gothic, sans-serif" font-size="11" font-weight="700">
+          <rect x="20" y="30" width="228" height="88" rx="9" fill="#0c0c0c" stroke="#5AA9EC"/>
+          <text x="134" y="52" text-anchor="middle" fill="#5AA9EC" font-size="13" font-weight="800">CSPM</text>
+          <text x="134" y="72" text-anchor="middle" fill="#fff" font-size="10.5">Configured right?</text>
+          <text x="134" y="90" text-anchor="middle" fill="#bdbdbd" font-size="9.5">misconfig · exposure</text>
+          <text x="134" y="106" text-anchor="middle" fill="#8c8c8c" font-size="9">the config layer</text>
+
+          <rect x="264" y="30" width="228" height="88" rx="9" fill="#0c0c0c" stroke="#3AD0B0"/>
+          <text x="378" y="52" text-anchor="middle" fill="#3AD0B0" font-size="13" font-weight="800">CWPP</text>
+          <text x="378" y="72" text-anchor="middle" fill="#fff" font-size="10.5">Workloads protected?</text>
+          <text x="378" y="90" text-anchor="middle" fill="#bdbdbd" font-size="9.5">VMs · containers · λ</text>
+          <text x="378" y="106" text-anchor="middle" fill="#8c8c8c" font-size="9">the workload layer</text>
+
+          <rect x="508" y="30" width="228" height="88" rx="9" fill="#0c0c0c" stroke="#FE9A3A"/>
+          <text x="622" y="52" text-anchor="middle" fill="#FE9A3A" font-size="13" font-weight="800">CIEM</text>
+          <text x="622" y="72" text-anchor="middle" fill="#fff" font-size="10.5">Who can do what?</text>
+          <text x="622" y="90" text-anchor="middle" fill="#bdbdbd" font-size="9.5">identities · entitlements</text>
+          <text x="622" y="106" text-anchor="middle" fill="#8c8c8c" font-size="9">the identity layer</text>
+
+          <rect x="752" y="30" width="228" height="88" rx="9" fill="#1a1305" stroke="#E9BF35"/>
+          <text x="866" y="52" text-anchor="middle" fill="#E9BF35" font-size="13" font-weight="800">CDR</text>
+          <text x="866" y="72" text-anchor="middle" fill="#fff" font-size="10.5">Attacking right now?</text>
+          <text x="866" y="90" text-anchor="middle" fill="#bdbdbd" font-size="9.5">detect · respond</text>
+          <text x="866" y="106" text-anchor="middle" fill="#8c8c8c" font-size="9">the detection layer</text>
+
+          <!-- traveling scan dot across all four -->
+          <path id="ovscan" d="M20,134 L980,134" fill="none" stroke="none"/>
+          <line x1="20" y1="134" x2="980" y2="134" stroke="#2b2b2b" stroke-width="1.3"/>
+          <circle r="4" fill="#E9BF35"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#ovscan"/></animateMotion></circle>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">Three build-and-config pillars — <b>CSPM</b>, <b>CWPP</b>, <b>CIEM</b> — plus one runtime detection pillar, <b>CDR</b>. Together they cover <span class="em">posture → protection → identity → detection</span>.</p>
+    </div>
+
+    <!-- 02 CSPM -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">02</div><div class="ctitle">CSPM <span class="t2">— posture / config</span></div></div>
+      <p style="margin-bottom:6px"><b>Cloud Security Posture Management</b> — audits the cloud <b>account</b> against best practice &amp; policy.</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🪣</span><div><b>Exposed storage</b> <span>— public buckets, open snapshots, world-readable data.</span></div></div>
+        <div class="gx"><span class="ic">🔓</span><div><b>Weak network rules</b> <span>— 0.0.0.0/0 security groups, no encryption at rest.</span></div></div>
+        <div class="gx"><span class="ic">📐</span><div><b>Policy drift</b> <span>— config wanders from the baseline across accounts.</span></div></div>
+      </div>
+      <p style="margin-top:7px"><span class="em">Finds misconfigurations — before an attacker does.</span></p>
+    </div>
+
+    <!-- 03 CWPP -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">03</div><div class="ctitle">CWPP <span class="t2">— workload / runtime</span></div></div>
+      <p style="margin-bottom:6px"><b>Cloud Workload Protection Platform</b> — protects the things that actually <b>run</b>.</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🖥️</span><div><b>Covers</b> <span>— VMs, containers &amp; serverless functions, wherever they live.</span></div></div>
+        <div class="gx"><span class="ic">🐞</span><div><b>Vuln scanning</b> <span>— known CVEs in images, packages &amp; the OS.</span></div></div>
+        <div class="gx"><span class="ic">🛡️</span><div><b>Runtime protection</b> <span>— catches malicious behaviour as the workload runs.</span></div></div>
+      </div>
+      <p style="margin-top:7px"><span class="em">Guards the workload — build-time scan + run-time defence.</span></p>
+    </div>
+
+    <!-- 04 CIEM -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">04</div><div class="ctitle">CIEM <span class="t2">— identity / entitlements</span></div></div>
+      <p style="margin-bottom:6px"><b>Cloud Infrastructure Entitlement Management</b> — untangles who can touch what in cloud IAM.</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">👑</span><div><b>Over-privileged</b> <span>— identities granted far more than they ever use.</span></div></div>
+        <div class="gx"><span class="ic">☣️</span><div><b>Toxic combos</b> <span>— permission pairs that together enable escalation.</span></div></div>
+        <div class="gx"><span class="ic">🔗</span><div><b>Risky role chains</b> <span>— A assumes B assumes C → an unexpected path to power.</span></div></div>
+      </div>
+      <p style="margin-top:7px"><span class="em">Right-sizes identity — trims unused &amp; excess privilege.</span></p>
+    </div>
+
+    <!-- 05 CDR -->
+    <div class="card c-purple">
+      <div class="chead"><div class="num">05</div><div class="ctitle">CDR <span class="t2">— detection / response</span></div></div>
+      <p style="margin-bottom:6px"><b>Cloud Detection &amp; Response</b> — the runtime watchtower for an attack <b>in progress</b>.</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">📜</span><div><b>Cloud logs</b> <span>— control-plane &amp; API activity (CloudTrail-style events).</span></div></div>
+        <div class="gx"><span class="ic">🪪</span><div><b>Identity signals</b> <span>— odd logins, sudden privilege use, key abuse.</span></div></div>
+        <div class="gx"><span class="ic">🧭</span><div><b>Attack-path context</b> <span>— stitches events into one narrative, not alerts.</span></div></div>
+      </div>
+      <p style="margin-top:7px"><span class="em">Detects active threats — and drives the response.</span></p>
+    </div>
+
+    <!-- 06 COMPARISON TABLE -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Side by side <span class="t2">— what each pillar finds, and when</span></div></div>
+      <table>
+        <tr><th></th><th style="color:#5AA9EC">CSPM</th><th style="color:#3AD0B0">CWPP</th><th style="color:#FE9A3A">CIEM</th><th style="color:#E9BF35">CDR</th></tr>
+        <tr><td class="k">What it finds</td><td>Misconfigured resources</td><td>Vulnerable / attacked workloads</td><td>Over-privileged identities</td><td>Active cloud threats</td></tr>
+        <tr><td class="k">Layer</td><td>Config</td><td>Workload</td><td>Identity</td><td>Runtime</td></tr>
+        <tr><td class="k">When</td><td>Build &amp; run</td><td>Build &amp; run</td><td>Build &amp; run</td><td class="win">Run (live)</td></tr>
+        <tr><td class="k">Example</td><td>Public S3 bucket</td><td>Log4Shell in a container</td><td>Unused admin role</td><td>Stolen key used at 3am</td></tr>
+      </table>
+      <p style="margin-top:7px"><span class="em">CSPM · CWPP · CIEM harden the cloud; CDR watches it while it runs.</span></p>
+    </div>
+
+    <!-- 07 HOW THEY STACK -->
+    <div class="card span2 c-green">
+      <div class="chead"><div class="num">07</div><div class="ctitle">How they stack <span class="t2">— three foundations under one runtime lens</span></div></div>
+      <svg viewBox="0 0 1000 150" width="100%" style="display:block">
+        <g font-family="Century Gothic, sans-serif" font-weight="700">
+          <!-- CDR umbrella on top -->
+          <rect x="120" y="18" width="760" height="34" rx="9" fill="#1a1305" stroke="#E9BF35"/>
+          <text x="500" y="40" text-anchor="middle" fill="#E9BF35" font-size="13" font-weight="800">CDR — runtime detection &amp; response</text>
+          <!-- three feeds up into CDR -->
+          <path id="s1" d="M220,110 L300,54" fill="none" stroke="none"/>
+          <path id="s2" d="M500,110 L500,54" fill="none" stroke="none"/>
+          <path id="s3" d="M780,110 L700,54" fill="none" stroke="none"/>
+          <line x1="220" y1="110" x2="300" y2="54" stroke="#2b2b2b" stroke-width="1.3"/>
+          <line x1="500" y1="110" x2="500" y2="54" stroke="#2b2b2b" stroke-width="1.3"/>
+          <line x1="780" y1="110" x2="700" y2="54" stroke="#2b2b2b" stroke-width="1.3"/>
+          <circle r="3.4" fill="#5AA9EC"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#s1"/></animateMotion></circle>
+          <circle r="3.4" fill="#3AD0B0"><animateMotion dur="2.4s" begin="-0.8s" repeatCount="indefinite"><mpath href="#s2"/></animateMotion></circle>
+          <circle r="3.4" fill="#FE9A3A"><animateMotion dur="2.4s" begin="-1.6s" repeatCount="indefinite"><mpath href="#s3"/></animateMotion></circle>
+          <!-- three foundations -->
+          <rect x="120" y="110" width="200" height="32" rx="8" fill="#0c0c0c" stroke="#5AA9EC"/>
+          <text x="220" y="130" text-anchor="middle" fill="#5AA9EC" font-size="11">CSPM · config</text>
+          <rect x="400" y="110" width="200" height="32" rx="8" fill="#0c0c0c" stroke="#3AD0B0"/>
+          <text x="500" y="130" text-anchor="middle" fill="#3AD0B0" font-size="11">CWPP · workloads</text>
+          <rect x="680" y="110" width="200" height="32" rx="8" fill="#0c0c0c" stroke="#FE9A3A"/>
+          <text x="780" y="130" text-anchor="middle" fill="#FE9A3A" font-size="11">CIEM · identity</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px"><span class="em">Posture, protection &amp; identity feed the signals; CDR turns them into detection.</span></p>
+    </div>
+
+    <!-- 08 WHY TOGETHER -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">08</div><div class="ctitle">Why together <span class="t2">— one real breach chains all three</span></div></div>
+      <div class="steps">
+        <span class="step" style="border-color:#1e3a52;color:#5AA9EC">Misconfig — public bucket (CSPM)</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#123a34;color:#3AD0B0">Vulnerable workload — unpatched (CWPP)</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#3a2a10;color:#FE9A3A">Over-privileged role assumed (CIEM)</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#3a2d08;color:#E9BF35">CDR catches it in progress</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">One pillar alone sees only its slice — it misses the chain.</span> That is exactly why a <b>CNAPP</b> bundles CSPM + CWPP + CIEM + CDR into one platform that follows the attack path end to end.</p>
+    </div>
+
+    <!-- 09 WATCH OUT -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🏷️</span><div><b>Overlapping claims</b> <span>— one vendor's "CNAPP" may be light on a pillar. Check coverage, not the label.</span></div></div>
+        <div class="gx"><span class="ic">🔀</span><div><b>CSPM ≠ CWPP</b> <span>— config posture is not runtime protection. A clean config still runs vulnerable code.</span></div></div>
+        <div class="gx"><span class="ic">🙈</span><div><b>CIEM is overlooked</b> <span>— cloud IAM is huge &amp; permissive by default; entitlement sprawl hides in plain sight.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 10 QUICK PICK -->
+    <div class="card c-purple">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Which pillar? <span class="t2">— name the question</span></div></div>
+      <div class="trio">
+        <div class="mini"><h4 style="color:#5AA9EC">Is it set up right?</h4><p><b>CSPM</b> — audit config &amp; exposure.</p></div>
+        <div class="mini"><h4 style="color:#3AD0B0">Is the code safe?</h4><p><b>CWPP</b> — scan &amp; guard workloads.</p></div>
+        <div class="mini"><h4 style="color:#FE9A3A">Who can do what?</h4><p><b>CIEM</b> — right-size entitlements.</p></div>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">And "is anything happening <b>now</b>?" → that's <b style="color:#E9BF35">CDR</b>, watching at runtime.</span></p>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">CSPM checks <span class="em">config</span>, CWPP guards <span class="em">workloads</span>, CIEM controls <span class="em">identity</span>, CDR catches <span class="em">attacks</span> — four lenses on cloud risk, usually one CNAPP.</div>
+      <div class="flow2">
+        <span class="step">Configured right?</span><span class="arrow">→</span>
+        <span class="step">Workloads protected?</span><span class="arrow">→</span>
+        <span class="step">Who can do what?</span><span class="arrow">→</span>
+        <span class="step">Attacking now?</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

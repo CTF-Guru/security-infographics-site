@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTEM — Continuous Threat Exposure Management</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="ctem-poster.gif" download>GIF</a> · <a href="ctem-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>EXPOSURE <span class="b">MANAGEMENT</span></h1>
+  <div class="sub">CTEM — a continuous program to find, prove &amp; cut the exposure attackers can <b>actually exploit</b> <span class="dim">(a Gartner operating model — bigger than patching CVEs)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 WHAT IT IS -->
+    <div class="card span2 c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">What CTEM is <span class="t2">— a program, not a product</span></div></div>
+      <p>Coined by <b>Gartner</b>, Continuous Threat Exposure Management is an <span class="em">operating model</span> — a repeating program that finds, prioritizes, and reduces the exposure attackers could use, across your whole environment.</p>
+      <p style="margin-top:7px"><span class="em">Broader than vulnerability management — it's a way of running security, not a scanner you buy.</span></p>
+    </div>
+
+    <!-- 02 WHY -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">02</div><div class="ctitle">Why it exists</div></div>
+      <p>Classic vulnerability management drowns teams in <b>CVSS scores</b> — thousands of findings, no signal on which ones an attacker can reach in <b>your</b> setup.</p>
+      <p style="margin-top:7px"><span class="em">CTEM asks a sharper question: what is exploitable and reachable here — right now?</span></p>
+    </div>
+
+    <!-- 03 EXPOSURE ≠ VULNS -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">03</div><div class="ctitle">Exposure ≠ just vulns</div></div>
+      <p style="margin-bottom:7px">A CVE is only one kind of exposure. CTEM counts <b>everything</b> an attacker can turn into a foothold:</p>
+      <div class="chips">
+        <span class="chip">vulnerabilities</span><span class="chip">misconfigurations</span><span class="chip">over-privileged identities</span><span class="chip">exposed assets</span><span class="chip">attack paths</span>
+      </div>
+    </div>
+
+    <!-- 04 THE FIVE STAGES — HERO CYCLE -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">04</div><div class="ctitle">The five stages <span class="t2">— a continuous cycle, run &amp; re-run</span></div></div>
+      <svg viewBox="0 0 1000 250" width="100%" style="display:block" font-family="Century Gothic, sans-serif">
+        <!-- ring track: 5 nodes on r=88 around (500,122), angles -90,-18,54,126,198 -->
+        <!-- SCOPE (500,34) · DISCOVER (583.7,93.8) · PRIORITIZE (551.7,193.2) · VALIDATE (448.3,193.2) · MOBILIZE (416.3,93.8) -->
+        <circle cx="500" cy="122" r="88" fill="none" stroke="#2b2b2b" stroke-width="2"/>
+        <!-- clockwise travelling dot on the ring, restating the loop as a closed circle path -->
+        <path id="ctemRing" d="M500,34 A88,88 0 0 1 500,210 A88,88 0 0 1 500,34 Z" fill="none" stroke="none"/>
+        <circle r="7" fill="#E9BF35" opacity=".24"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#ctemRing"/></animateMotion></circle>
+        <circle r="3.6" fill="#fff"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#ctemRing"/></animateMotion></circle>
+        <!-- hub -->
+        <text x="500" y="118" text-anchor="middle" fill="#E9BF35" font-size="14" font-weight="800">CTEM</text>
+        <text x="500" y="134" text-anchor="middle" fill="#8c8c8c" font-size="10">continuous</text>
+
+        <!-- connector leaders from each node out to its label -->
+        <g stroke="#2b2b2b" stroke-width="1">
+          <line x1="583.7" y1="93.8" x2="695" y2="88"/>
+          <line x1="551.7" y1="193.2" x2="695" y2="200"/>
+          <line x1="448.3" y1="193.2" x2="305" y2="200"/>
+          <line x1="416.3" y1="93.8" x2="305" y2="88"/>
+        </g>
+
+        <!-- nodes -->
+        <g font-weight="800">
+          <!-- 1 SCOPE (top) -->
+          <circle class="tlDot" cx="500" cy="34" r="7" fill="#5AA9EC" style="animation-delay:0s"/>
+          <text x="500" y="20" text-anchor="middle" fill="#5AA9EC" font-size="12.5">1 · SCOPE</text>
+          <text x="500" y="247" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">what matters to the business</text>
+          <!-- 2 DISCOVER (upper right) -->
+          <circle class="tlDot" cx="583.7" cy="93.8" r="7" fill="#3AD0B0" style="animation-delay:1.2s"/>
+          <text x="700" y="86" text-anchor="start" fill="#3AD0B0" font-size="12.5">2 · DISCOVER</text>
+          <text x="700" y="101" text-anchor="start" fill="#8c8c8c" font-size="9.5" font-weight="600">vulns · misconfigs · identities · paths</text>
+          <!-- 3 PRIORITIZE (lower right) -->
+          <circle class="tlDot" cx="551.7" cy="193.2" r="7" fill="#FE9A3A" style="animation-delay:2.4s"/>
+          <text x="700" y="198" text-anchor="start" fill="#FE9A3A" font-size="12.5">3 · PRIORITIZE</text>
+          <text x="700" y="213" text-anchor="start" fill="#8c8c8c" font-size="9.5" font-weight="600">exploitability · exposure · impact</text>
+          <!-- 4 VALIDATE (lower left) -->
+          <circle class="tlDot" cx="448.3" cy="193.2" r="7" fill="#9B5DE5" style="animation-delay:3.6s"/>
+          <text x="300" y="198" text-anchor="end" fill="#9B5DE5" font-size="12.5">4 · VALIDATE</text>
+          <text x="300" y="213" text-anchor="end" fill="#8c8c8c" font-size="9.5" font-weight="600">prove it's really exploitable</text>
+          <!-- 5 MOBILIZE (upper left) -->
+          <circle class="tlDot" cx="416.3" cy="93.8" r="7" fill="#81BB42" style="animation-delay:4.8s"/>
+          <text x="300" y="86" text-anchor="end" fill="#81BB42" font-size="12.5">5 · MOBILIZE</text>
+          <text x="300" y="101" text-anchor="end" fill="#8c8c8c" font-size="9.5" font-weight="600">drive remediation · close loop</text>
+        </g>
+      </svg>
+      <p style="margin-top:4px" class="lead"><b>Scope → Discover → Prioritize → Validate → Mobilize</b> — then loop. The middle three turn a raw asset list into a short, proven, business-ranked worklist.</p>
+    </div>
+
+    <!-- 05 VALIDATE — THE DIFFERENTIATOR -->
+    <div class="card c-purple">
+      <div class="chead"><div class="num">05</div><div class="ctitle">Validate · the differentiator</div></div>
+      <p style="margin-bottom:7px">This is what sets CTEM apart. Don't assume a finding is dangerous — <b>prove</b> it's reachable and exploitable:</p>
+      <div class="chips">
+        <span class="chip">BAS (breach &amp; attack sim)</span><span class="chip">pen testing</span><span class="chip">attack-path analysis</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">Validation cuts the noise — it stops the backlog before it forms.</span></p>
+    </div>
+
+    <!-- 06 MOBILIZE -->
+    <div class="card c-green">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Mobilize · close the loop</div></div>
+      <p style="margin-bottom:7px">Turn <b>validated</b> exposures into remediation that actually ships — with owners and an operating rhythm:</p>
+      <div class="steps">
+        <span class="step" style="border-color:#243b18;color:#81BB42">assign an owner</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">remediate</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">re-run cycle</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">A finding no one owns never gets fixed.</span></p>
+    </div>
+
+    <!-- 07 CONTINUOUS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">07</div><div class="ctitle">Continuous, not a scan</div></div>
+      <p>Your environment and the threats against it change daily — new assets, new access, new exploits. A once-a-quarter scan is stale before the report ships.</p>
+      <p style="margin-top:7px"><span class="em">CTEM is a rhythm you keep running, not a point-in-time snapshot.</span></p>
+    </div>
+
+    <!-- 08 CTEM vs VM -->
+    <div class="card span2 c-teal">
+      <div class="chead"><div class="num">08</div><div class="ctitle">CTEM vs Vulnerability Management <span class="t2">— same goal, different operating model</span></div></div>
+      <table>
+        <tr><th>Dimension</th><th>Vulnerability Management</th><th>CTEM</th></tr>
+        <tr><td class="k">Cadence</td><td class="no">Point-in-time scans</td><td class="win">Continuous program</td></tr>
+        <tr><td class="k">Scope</td><td class="no">Known CVEs</td><td class="win">Vulns + misconfigs + identities + paths</td></tr>
+        <tr><td class="k">Ranking</td><td class="no">CVSS score</td><td class="win">Exploitability + exposure + business impact</td></tr>
+        <tr><td class="k">Proof</td><td class="no">Assumed from the score</td><td class="win">Validated — shown to be exploitable</td></tr>
+        <tr><td class="k">Framing</td><td class="no">A patch list</td><td class="win">Business-scoped exposure reduction</td></tr>
+      </table>
+    </div>
+
+    <!-- 09 STAGE INPUTS AT A GLANCE -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">09</div><div class="ctitle">What each stage delivers</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🎯</span><div><b>Scope</b> <span>— the business-critical systems &amp; attack surface that matter.</span></div></div>
+        <div class="gx"><span class="ic">🔎</span><div><b>Discover</b> <span>— the assets and their exposures across the scope.</span></div></div>
+        <div class="gx"><span class="ic">📊</span><div><b>Prioritize</b> <span>— the few that are exploitable, reachable &amp; high-impact.</span></div></div>
+        <div class="gx"><span class="ic">🧪</span><div><b>Validate → Mobilize</b> <span>— proven true, then owned and fixed.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 10 WATCH OUT -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🛒</span><div><b>"Buying CTEM"</b> <span>— it's a program &amp; operating model, not a single product.</span></div></div>
+        <div class="gx"><span class="ic">🌊</span><div><b>Boiling the ocean</b> <span>— skip scoping and you drown. Start with what matters.</span></div></div>
+        <div class="gx"><span class="ic">📋</span><div><b>Skipping validation</b> <span>— without it, CTEM is just another huge vuln backlog.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">CTEM is a <span class="em">continuous loop</span> — scope, discover, prioritize, validate, mobilize — that shrinks the exposure attackers can <span class="em">actually exploit</span>, not just the CVE count.</div>
+      <div class="flow2">
+        <span class="step">Scope</span><span class="arrow">→</span>
+        <span class="step">Discover</span><span class="arrow">→</span>
+        <span class="step">Prioritize</span><span class="arrow">→</span>
+        <span class="step">Validate</span><span class="arrow">→</span>
+        <span class="step">Mobilize</span><span class="arrow">↻</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

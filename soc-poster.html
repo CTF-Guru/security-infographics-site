@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOC — Security Operations Center</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="soc-poster.gif" download>GIF</a> · <a href="soc-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>SECURITY <span class="b">OPERATIONS</span></h1>
+  <div class="sub">The people, process &amp; tooling that <b>monitor, detect, investigate &amp; respond</b> to threats — often 24/7 <span class="dim">(the SOC — the nerve center of defense)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 WHAT IT IS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">What a SOC is</div></div>
+      <p>A <b>Security Operations Center</b> — the team + workflow + tooling that watches an organization's systems for attacks and drives the response. It brings <b>people</b>, <b>process</b> &amp; <b>technology</b> together in one place.</p>
+      <p style="margin-top:7px"><span class="em">The nerve center of defense — often staffed 24/7, because attacks don't keep office hours.</span></p>
+    </div>
+
+    <!-- 02 WHAT IT DOES -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">02</div><div class="ctitle">What it does</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">👁️</span><div><b>Monitor &amp; detect</b> <span>— ingest telemetry, spot suspicious activity.</span></div></div>
+        <div class="gx"><span class="ic">🔎</span><div><b>Investigate</b> <span>— is this real? how far did it get?</span></div></div>
+        <div class="gx"><span class="ic">🛡️</span><div><b>Respond &amp; recover</b> <span>— contain, eradicate, restore.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">And keep improving the detections so the next attack is caught sooner.</span></p>
+    </div>
+
+    <!-- 03 THE WORKFLOW — HERO LOOP -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">03</div><div class="ctitle">The SOC loop <span class="t2">— monitor → triage → investigate → respond → improve, and repeat</span></div></div>
+      <svg viewBox="0 0 1000 210" width="100%" style="display:block">
+        <!-- ring path the dot travels -->
+        <path id="socLoop" d="M120,105 A380,68 0 0 1 880,105 A380,68 0 0 1 120,105 Z" fill="none" stroke="#2b2b2b" stroke-width="2"/>
+        <circle r="6" fill="#E9BF35" opacity=".26"><animateMotion dur="4.8s" repeatCount="indefinite"><mpath href="#socLoop"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="4.8s" repeatCount="indefinite"><mpath href="#socLoop"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif" font-weight="800">
+          <!-- 1 MONITOR -->
+          <circle class="tlDot" cx="120" cy="105" r="7" fill="#5AA9EC" style="animation-delay:0s"/>
+          <text x="120" y="80" text-anchor="middle" fill="#5AA9EC" font-size="12.5">1 · Monitor</text>
+          <text x="120" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">watch telemetry</text>
+          <!-- 2 ALERT / TRIAGE -->
+          <circle class="tlDot" cx="310" cy="41" r="7" fill="#3AD0B0" style="animation-delay:.6s"/>
+          <text x="310" y="26" text-anchor="middle" fill="#3AD0B0" font-size="12.5">2 · Alert · Triage</text>
+          <text x="310" y="58" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">real or noise?</text>
+          <!-- 3 INVESTIGATE -->
+          <circle class="tlDot" cx="690" cy="41" r="7" fill="#FE9A3A" style="animation-delay:1.2s"/>
+          <text x="690" y="26" text-anchor="middle" fill="#FE9A3A" font-size="12.5">3 · Investigate</text>
+          <text x="690" y="58" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">scope the incident</text>
+          <!-- 4 RESPOND -->
+          <circle class="tlDot" cx="880" cy="105" r="7" fill="#DF2E28" style="animation-delay:1.8s"/>
+          <text x="880" y="80" text-anchor="middle" fill="#FF5A4D" font-size="12.5">4 · Respond</text>
+          <text x="880" y="126" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">contain · recover</text>
+          <!-- 5 IMPROVE -->
+          <circle class="tlDot" cx="500" cy="173" r="7" fill="#81BB42" style="animation-delay:2.4s"/>
+          <text x="500" y="196" text-anchor="middle" fill="#81BB42" font-size="12.5">5 · Improve</text>
+          <text x="500" y="160" text-anchor="middle" fill="#8c8c8c" font-size="9.5" font-weight="600">tune detections → feed back to 1</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px"><span class="em">A continuous loop, not a one-off — every incident sharpens the detections that catch the next one.</span></p>
+    </div>
+
+    <!-- 04 THE TIERS / ROLES -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">04</div><div class="ctitle">The tiers &amp; roles <span class="t2">— alerts escalate up; expertise deepens</span></div></div>
+      <div class="trio">
+        <div class="mini"><h4 style="color:#5AA9EC">🟦 Tier 1 · Triage</h4><p>Front line — works the alert queue, filters noise, escalates the real ones.</p></div>
+        <div class="mini"><h4 style="color:#3AD0B0">🟩 Tier 2 · Investigate</h4><p>Digs into escalated incidents — scopes impact, runs the response.</p></div>
+        <div class="mini"><h4 style="color:#FE9A3A">🟧 Tier 3 · Hunt &amp; IR</h4><p>Senior analysts — proactive threat hunting &amp; deep incident response.</p></div>
+      </div>
+      <div class="steps" style="margin-top:8px">
+        <span class="step" style="border-color:#3a2d08;color:#E9BF35">Detection Engineer — builds &amp; tunes the detections</span>
+        <span class="step" style="border-color:#3a2d08;color:#E9BF35">SOC Manager — runs the team, metrics &amp; on-call</span>
+      </div>
+    </div>
+
+    <!-- 05 THE STACK -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">05</div><div class="ctitle">The stack the SOC runs on <span class="t2">— collect → detect → automate → manage</span></div></div>
+      <svg viewBox="0 0 1000 118" width="100%" style="display:block">
+        <path id="socStack" d="M70,60 L930,60" fill="none" stroke="none"/>
+        <line x1="70" y1="60" x2="930" y2="60" stroke="#2b2b2b" stroke-width="2"/>
+        <circle r="6" fill="#E9BF35" opacity=".28"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#socStack"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#socStack"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif" font-weight="700">
+          <rect x="60" y="45" width="150" height="30" rx="7" fill="#0d1116" stroke="#5AA9EC"/><text x="135" y="64" text-anchor="middle" fill="#5AA9EC" font-size="11">EDR · logs · net</text>
+          <rect x="285" y="45" width="170" height="30" rx="7" fill="#0f1015" stroke="#3AD0B0"/><text x="370" y="64" text-anchor="middle" fill="#3AD0B0" font-size="11">SIEM / XDR — detect</text>
+          <rect x="530" y="45" width="160" height="30" rx="7" fill="#160f04" stroke="#FE9A3A"/><text x="610" y="64" text-anchor="middle" fill="#FE9A3A" font-size="11">SOAR — automate</text>
+          <rect x="765" y="45" width="165" height="30" rx="7" fill="#0d1305" stroke="#81BB42"/><text x="847" y="64" text-anchor="middle" fill="#81BB42" font-size="11">Case mgmt — track</text>
+          <text x="500" y="24" text-anchor="middle" fill="#E9BF35" font-size="11" font-weight="800">+ THREAT INTEL feeds the detections at every stage</text>
+          <text x="135" y="94" text-anchor="middle" fill="#8c8c8c" font-size="9.5">telemetry sources</text>
+          <text x="370" y="94" text-anchor="middle" fill="#8c8c8c" font-size="9.5">correlate → alerts</text>
+          <text x="610" y="94" text-anchor="middle" fill="#8c8c8c" font-size="9.5">playbooks · toil ↓</text>
+          <text x="847" y="94" text-anchor="middle" fill="#8c8c8c" font-size="9.5">tickets · handoff</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- 06 DETECTION ENGINEERING -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">06</div><div class="ctitle">Detection engineering</div></div>
+      <p style="margin-bottom:7px">Turn attacker behavior (<b>MITRE ATT&amp;CK</b>) + threat intel into <b>tuned detections</b> — codified, tested, version-controlled.</p>
+      <div class="steps">
+        <span class="step">behavior</span><span class="arrow">→</span>
+        <span class="step">detection rule</span><span class="arrow">→</span>
+        <span class="step">tune</span><span class="arrow">→</span>
+        <span class="step">fewer false positives</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">A precise detection is worth more than ten noisy ones.</span></p>
+    </div>
+
+    <!-- 07 THREAT HUNTING -->
+    <div class="card c-purple">
+      <div class="chead"><div class="num">07</div><div class="ctitle">Threat hunting</div></div>
+      <p style="margin-bottom:7px">Proactively search for what the alerts <b>missed</b> — start from a hypothesis and <b>assume breach</b>, don't just work the queue.</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🎯</span><div><b>Hypothesis-driven</b> <span>— "if an attacker were here, what would I see?"</span></div></div>
+        <div class="gx"><span class="ic">🔁</span><div><b>Finds → detections</b> <span>— a good hunt becomes tomorrow's alert.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 08 METRICS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">08</div><div class="ctitle">How a SOC is judged</div></div>
+      <table>
+        <tr><th>Metric</th><th>Means</th></tr>
+        <tr><td class="k">MTTD</td><td>mean time to <b>detect</b></td></tr>
+        <tr><td class="k">MTTR</td><td>mean time to <b>respond</b></td></tr>
+        <tr><td class="k">Alert volume</td><td>load on the analysts</td></tr>
+        <tr><td class="k">False-positive rate</td><td class="no">noise → fatigue</td></tr>
+      </table>
+      <div class="chips" style="margin-top:8px">
+        <span class="chip">ATT&amp;CK coverage</span><span class="chip">dwell time</span>
+      </div>
+    </div>
+
+    <!-- 09 OPERATING MODELS -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">09</div><div class="ctitle">Operating models</div></div>
+      <table>
+        <tr><th>Model</th><th>Who runs it</th></tr>
+        <tr><td class="k">In-house</td><td>your own team &amp; tools</td></tr>
+        <tr><td class="k">MSSP</td><td>outsourced monitoring</td></tr>
+        <tr><td class="k">MDR</td><td>managed detect &amp; respond</td></tr>
+        <tr><td class="k">Hybrid</td><td>in-house + provider</td></tr>
+      </table>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">24/7 coverage is expensive — the model is a cost / control trade-off.</span></p>
+    </div>
+
+    <!-- 10 WATCH OUT -->
+    <div class="card span2 c-red">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Watch out <span class="t2">— the failure modes that quietly break a SOC</span></div></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px 16px">
+        <div class="gx"><span class="ic">😵</span><div><b>Alert fatigue &amp; burnout</b> <span>— the #1 SOC problem: too many alerts, tired analysts miss the real one.</span></div></div>
+        <div class="gx"><span class="ic">🎛️</span><div><b>Untuned detections</b> <span>— noise drowns signal. Tune relentlessly for precision.</span></div></div>
+        <div class="gx"><span class="ic">🤖</span><div><b>Manual toil</b> <span>— automate the repetitive steps (SOAR) so people do the thinking.</span></div></div>
+        <div class="gx"><span class="ic">🕳️</span><div><b>Logging gaps</b> <span>— what you don't log, you can't see. Coverage is a prerequisite.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 11 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">11</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">A SOC turns <span class="em">telemetry into detection &amp; response</span> through people, process &amp; tooling — and is judged by <span class="em">how fast it detects and responds</span> (MTTD / MTTR).</div>
+      <div class="flow2">
+        <span class="step">Collect telemetry</span><span class="arrow">→</span>
+        <span class="step">Detect</span><span class="arrow">→</span>
+        <span class="step">Respond</span><span class="arrow">→</span>
+        <span class="step">Improve detections</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

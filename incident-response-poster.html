@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident Response Lifecycle</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Gallery</a></div>
+<div class="dl-bar">⬇ <a href="incident-response-poster.gif" download>GIF</a> · <a href="incident-response-poster.png" download>PNG</a></div>
+<div class="poster">
+
+  <!-- ================= MASTHEAD ================= -->
+  <div class="kicker">Security · field guide</div>
+  <h1>INCIDENT <span class="b">RESPONSE</span></h1>
+  <div class="sub">The repeatable loop for handling a security incident <b>calmly</b> — prepare, detect, contain, recover, learn <span class="dim">(NIST SP 800-61 · SANS PICERL — a process, not improvisation)</span></div>
+  <div class="byline">
+    <div class="brandmark"><span class="logo">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="who">· security explainer series</div>
+    <div class="badge">v2026.06</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 01 WHAT IT IS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">01</div><div class="ctitle">What it is</div></div>
+      <p>A <b>repeatable process</b> to handle a security incident calmly — <b>prepare, detect, contain, recover,</b> and <b>learn</b> — instead of improvising in the middle of a crisis.</p>
+      <p style="margin-top:7px"><span class="em">The plan you write on a quiet day is what saves you on the worst one.</span></p>
+    </div>
+
+    <!-- 02 IT'S A LOOP -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">02</div><div class="ctitle">It's a loop, not a line</div></div>
+      <p style="margin-bottom:7px">Two names for the same lifecycle — <b>NIST</b> groups containment / eradication / recovery; <b>SANS</b> spells them out as <b>PICERL</b>.</p>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🏛️</span><div><b>NIST SP 800-61</b> <span>— Prepare · Detect &amp; Analyze · Contain/Eradicate/Recover · Post-Incident.</span></div></div>
+        <div class="gx"><span class="ic">🧭</span><div><b>SANS PICERL</b> <span>— Prepare · Identify · Contain · Eradicate · Recover · Lessons Learned.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 03 THE PHASES — HERO LOOP -->
+    <div class="card span2 c-gold">
+      <div class="chead"><div class="num">03</div><div class="ctitle">The lifecycle <span class="t2">— an animated loop · the retro feeds straight back into prep</span></div></div>
+      <svg viewBox="0 0 1000 250" width="100%" style="display:block">
+        <!-- circular track: cx=500 cy=118 r=96 -->
+        <circle cx="500" cy="118" r="96" fill="none" stroke="#2b2b2b" stroke-width="2"/>
+        <!-- travelling dot on the ring (clockwise from top) -->
+        <path id="irLoop" d="M500,22 A96,96 0 1,1 499.9,22" fill="none" stroke="none"/>
+        <circle r="6" fill="#E9BF35" opacity=".28"><animateMotion dur="4.2s" repeatCount="indefinite"><mpath href="#irLoop"/></animateMotion></circle>
+        <circle r="3.6" fill="#fff"><animateMotion dur="4.2s" repeatCount="indefinite"><mpath href="#irLoop"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif" text-anchor="middle">
+          <!-- centre label -->
+          <text x="500" y="112" fill="#E9BF35" font-size="15" font-weight="800">IR</text>
+          <text x="500" y="130" fill="#8c8c8c" font-size="10">lifecycle</text>
+          <!-- 6 nodes around the ring · 0/60/120/180/240/300 deg from top -->
+          <!-- 1 · Preparation — top (0°) -->
+          <circle class="tlDot" cx="500" cy="22" r="6.5" fill="#5AA9EC" style="animation-delay:0s"/>
+          <text x="500" y="12" fill="#5AA9EC" font-size="12.5" font-weight="800">1 · Preparation</text>
+          <!-- 2 · Detection — 60° (upper right) -->
+          <circle class="tlDot" cx="583" cy="70" r="6.5" fill="#3AD0B0" style="animation-delay:.7s"/>
+          <text x="640" y="58" fill="#3AD0B0" font-size="12.5" font-weight="800">2 · Detect &amp; Analyze</text>
+          <!-- 3 · Containment — 120° (lower right) -->
+          <circle class="tlDot" cx="583" cy="166" r="6.5" fill="#FE9A3A" style="animation-delay:1.4s"/>
+          <text x="636" y="182" fill="#FE9A3A" font-size="12.5" font-weight="800">3 · Containment</text>
+          <!-- 4 · Eradication — 180° (bottom) -->
+          <circle class="tlDot" cx="500" cy="214" r="6.5" fill="#DF2E28" style="animation-delay:2.1s"/>
+          <text x="500" y="234" fill="#FF5A4D" font-size="12.5" font-weight="800">4 · Eradication</text>
+          <!-- 5 · Recovery — 240° (lower left) -->
+          <circle class="tlDot" cx="417" cy="166" r="6.5" fill="#81BB42" style="animation-delay:2.8s"/>
+          <text x="364" y="182" fill="#81BB42" font-size="12.5" font-weight="800">5 · Recovery</text>
+          <!-- 6 · Post-Incident — 300° (upper left) -->
+          <circle class="tlDot" cx="417" cy="70" r="6.5" fill="#9B5DE5" style="animation-delay:3.5s"/>
+          <text x="360" y="58" fill="#9B5DE5" font-size="12.5" font-weight="800">6 · Post-Incident</text>
+          <text x="360" y="72" fill="#8c8c8c" font-size="10">lessons learned</text>
+        </g>
+      </svg>
+      <p style="margin-top:6px" class="lead">NIST groups <b>containment · eradication · recovery</b> into one phase; SANS names each. Either way the last step — <span class="em">lessons learned</span> — loops back into <span class="em">preparation</span>.</p>
+    </div>
+
+    <!-- 04 PREPARATION -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">04</div><div class="ctitle">1 · Preparation <span class="t2">— before anything happens</span></div></div>
+      <p style="margin-bottom:6px">The phase that decides how the rest goes. Build it while calm:</p>
+      <div class="chips">
+        <span class="chip">playbooks</span><span class="chip">defined roles</span><span class="chip">tooling + logging</span><span class="chip">tested backups</span><span class="chip">tabletop drills</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">You can't stand up a response team mid-breach — you can only run the one you built.</span></p>
+    </div>
+
+    <!-- 05 DETECTION & ANALYSIS -->
+    <div class="card c-teal">
+      <div class="chead"><div class="num">05</div><div class="ctitle">2 · Detection &amp; Analysis</div></div>
+      <p style="margin-bottom:6px">Detect it, scope it, triage severity — the three questions that shape everything after:</p>
+      <div class="steps">
+        <span class="step" style="border-color:#123a33;color:#3AD0B0">what happened?</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#123a33;color:#3AD0B0">how bad?</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#123a33;color:#3AD0B0">what's affected?</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">A confirmed, scoped incident beats a pile of unread alerts.</span></p>
+    </div>
+
+    <!-- 06 CONTAINMENT -->
+    <div class="card c-orange">
+      <div class="chead"><div class="num">06</div><div class="ctitle">3 · Containment <span class="t2">— stop the bleeding</span></div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🔌</span><div><b>Isolate hosts</b> <span>— pull the compromised machine off the network.</span></div></div>
+        <div class="gx"><span class="ic">🚫</span><div><b>Disable accounts</b> <span>— revoke the credentials and sessions in play.</span></div></div>
+        <div class="gx"><span class="ic">📡</span><div><b>Block C2</b> <span>— cut the attacker's command-and-control channel.</span></div></div>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">Short-term containment buys time; long-term containment holds while you eradicate.</span></p>
+    </div>
+
+    <!-- 07 ERADICATION -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">07</div><div class="ctitle">4 · Eradication <span class="t2">— remove the threat</span></div></div>
+      <p style="margin-bottom:6px">Root the attacker out for good — not just the symptom you first saw:</p>
+      <div class="chips">
+        <span class="chip">malware</span><span class="chip">backdoors</span><span class="chip">persistence</span><span class="chip">compromised creds</span>
+      </div>
+      <p style="margin-top:9px"><span class="em">Contain first, then eradicate — wipe too early and you lose the evidence.</span></p>
+    </div>
+
+    <!-- 08 RECOVERY -->
+    <div class="card c-green">
+      <div class="chead"><div class="num">08</div><div class="ctitle">5 · Recovery <span class="t2">— back to normal, carefully</span></div></div>
+      <div class="steps">
+        <span class="step" style="border-color:#243b18;color:#81BB42">restore</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">verify clean</span><span class="arrow">→</span>
+        <span class="step" style="border-color:#243b18;color:#81BB42">monitor</span>
+      </div>
+      <p style="margin-top:9px">Bring systems back, confirm they're actually clean, and <b>watch closely</b> for reinfection before you call it done.</p>
+      <p style="margin-top:6px"><span class="em">Restoring a still-compromised backup just restarts the incident.</span></p>
+    </div>
+
+    <!-- 09 POST-INCIDENT -->
+    <div class="card span2 c-purple">
+      <div class="chead"><div class="num">09</div><div class="ctitle">6 · Post-Incident <span class="t2">— the blameless retro that closes the loop</span></div></div>
+      <svg viewBox="0 0 1000 96" width="100%" style="display:block">
+        <line x1="70" y1="52" x2="930" y2="52" stroke="#2b2b2b" stroke-width="2"/>
+        <path id="irRetro" d="M70,52 L930,52" fill="none" stroke="none"/>
+        <circle r="6" fill="#9B5DE5" opacity=".28"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#irRetro"/></animateMotion></circle>
+        <circle r="3.4" fill="#fff"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#irRetro"/></animateMotion></circle>
+        <g font-family="Century Gothic, sans-serif">
+          <g><circle class="tlDot" cx="120" cy="52" r="6" fill="#9B5DE5" style="animation-delay:0s"/>
+            <text x="120" y="34" text-anchor="middle" fill="#9B5DE5" font-size="12" font-weight="800">What happened?</text>
+            <text x="120" y="76" text-anchor="middle" fill="#8c8c8c" font-size="9.5">timeline of facts</text></g>
+          <g><circle class="tlDot" cx="390" cy="52" r="6" fill="#5AA9EC" style="animation-delay:.7s"/>
+            <text x="390" y="34" text-anchor="middle" fill="#5AA9EC" font-size="12" font-weight="800">What went wrong?</text>
+            <text x="390" y="76" text-anchor="middle" fill="#8c8c8c" font-size="9.5">gaps, not people</text></g>
+          <g><circle class="tlDot" cx="660" cy="52" r="6" fill="#3AD0B0" style="animation-delay:1.4s"/>
+            <text x="660" y="34" text-anchor="middle" fill="#3AD0B0" font-size="12" font-weight="800">What to fix?</text>
+            <text x="660" y="76" text-anchor="middle" fill="#8c8c8c" font-size="9.5">owned action items</text></g>
+          <g><circle class="tlDot" cx="900" cy="52" r="6" fill="#E9BF35" style="animation-delay:2.1s"/>
+            <text x="900" y="34" text-anchor="middle" fill="#E9BF35" font-size="12" font-weight="800">↺ Preparation</text>
+            <text x="900" y="76" text-anchor="middle" fill="#8c8c8c" font-size="9.5">fixes feed back in</text></g>
+        </g>
+      </svg>
+      <p style="margin-top:6px"><span class="em">Blameless — hunt the process gap, not the person.</span> Closing the loop is what makes the <b>next</b> incident faster to handle.</p>
+    </div>
+
+    <!-- 10 ROLES & COMMS -->
+    <div class="card c-blue">
+      <div class="chead"><div class="num">10</div><div class="ctitle">Roles &amp; communications</div></div>
+      <div class="trio">
+        <div class="mini"><h4 style="color:#E9BF35">🎯 IR Lead</h4><p>Runs the response &amp; makes the calls — one clear decision-maker.</p></div>
+        <div class="mini"><h4 style="color:#3AD0B0">🔬 Analysts</h4><p>Investigate, contain, eradicate — the hands on the keyboard.</p></div>
+        <div class="mini"><h4 style="color:#9B5DE5">⚖️ Legal · Comms · Execs</h4><p>Notify &amp; disclose — regulators, customers, the business.</p></div>
+      </div>
+      <p style="margin-top:8px"><span class="dim" style="color:#8c8c8c">Decide <b>who to notify and when</b> before the incident — breach-notification clocks start ticking fast.</span></p>
+    </div>
+
+    <!-- 11 WATCH OUT -->
+    <div class="card c-red">
+      <div class="chead"><div class="num">11</div><div class="ctitle">Watch out</div></div>
+      <div class="gotchas">
+        <div class="gx"><span class="ic">🌀</span><div><b>No plan</b> <span>— improvising under pressure means chaos. Prepare first.</span></div></div>
+        <div class="gx"><span class="ic">💥</span><div><b>Eradicate before containing</b> <span>— you tip off the attacker and lose control.</span></div></div>
+        <div class="gx"><span class="ic">🧾</span><div><b>Destroying evidence</b> <span>— preserve logs &amp; images before you wipe.</span></div></div>
+        <div class="gx"><span class="ic">⏭️</span><div><b>Skipping lessons learned</b> <span>— then you relive the same incident.</span></div></div>
+        <div class="gx"><span class="ic">🎭</span><div><b>Never drilling</b> <span>— tabletop it before the real thing, not during.</span></div></div>
+      </div>
+    </div>
+
+    <!-- 12 TAKEAWAY -->
+    <div class="card span2 takeaway c-gold">
+      <div class="chead"><div class="num">12</div><div class="ctitle">The takeaway</div></div>
+      <div class="big">Incident response is a <span class="em">loop, not a scramble</span> — where <span class="em">preparation and the blameless retro</span> make every future incident faster to handle.</div>
+      <div class="flow2">
+        <span class="step">Prepare</span><span class="arrow">→</span>
+        <span class="step">Detect</span><span class="arrow">→</span>
+        <span class="step">Contain</span><span class="arrow">→</span>
+        <span class="step">Eradicate</span><span class="arrow">→</span>
+        <span class="step">Recover</span><span class="arrow">→</span>
+        <span class="step">Learn</span><span class="arrow">↺</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="foot">
+    <div class="brandmark" style="font-size:13px"><span class="logo" style="width:22px;height:22px;font-size:11px;border-radius:5px">CTF</span> Farooq&nbsp;Ali</div>
+    <div class="sig" style="margin-left:auto"><a href="https://ctf.guru" style="color:var(--gold);text-decoration:none;font-weight:700">ctf.guru</a> · security explainer series · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>

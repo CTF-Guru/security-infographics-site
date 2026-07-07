@@ -17,8 +17,8 @@
   .sub{ color:var(--muted); font-size:.95rem }
   .sub b{ color:var(--gold); font-weight:700 }
 
-  /* top-left home pill → back to the ctf.guru hub (mirrors the poster "← Gallery" pill) */
-  .sitenav{ margin-bottom:20px }
+  /* top bar: home pill (→ ctf.guru hub, mirrors the poster "← Gallery" pill) + LinkedIn */
+  .sitenav{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:20px }
   .home{ display:inline-flex; align-items:center; gap:9px; text-decoration:none; color:var(--muted);
          font-weight:700; font-size:.88rem; padding:7px 14px 7px 11px; border:1px solid var(--line);
          border-radius:999px; background:var(--panel); transition:border-color .15s ease, color .15s ease }
@@ -26,6 +26,11 @@
   .home .shield{ width:20px; height:20px; flex:0 0 20px }
   .home .hn{ color:var(--gold) }
   .home .ret{ color:var(--dim); font-weight:600; font-size:.8rem }
+  .ln{ display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; width:38px; height:38px;
+       border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--muted);
+       text-decoration:none; transition:color .15s ease, border-color .15s ease }
+  .ln:hover{ color:var(--gold); border-color:var(--gold) }
+  .ln svg{ width:18px; height:18px; display:block }
 
   .tabs{ display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 22px }
   .tab{ font-size:.82rem; font-weight:700; color:var(--muted); background:var(--panel); border:1px solid var(--line);
@@ -96,7 +101,7 @@
 </head>
 <body>
 <div class="wrap">
-  <nav class="sitenav"><a class="home" href="https://ctf.guru"><span class="shield"></span><span class="hn">ctf.guru</span><span class="ret">← all topics</span></a></nav>
+  <nav class="sitenav"><a class="home" href="https://ctf.guru"><span class="shield"></span><span class="hn">ctf.guru</span><span class="ret">← all topics</span></a><a class="ln" href="https://www.linkedin.com/in/farooqali/" target="_blank" rel="noopener" aria-label="Farooq Ali on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5.001zM3.2 8.98h3.56V21H3.2zM9.02 8.98h3.41v1.64h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46V21h-3.56v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V21H9.02z"/></svg></a></nav>
   <header>
     <div class="kick">Security · Visual Explainer Library</div>
     <h1>Cybersecurity &amp; AI Security</h1>

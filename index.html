@@ -17,6 +17,16 @@
   .sub{ color:var(--muted); font-size:.95rem }
   .sub b{ color:var(--gold); font-weight:700 }
 
+  /* top-left home pill → back to the ctf.guru hub (mirrors the poster "← Gallery" pill) */
+  .sitenav{ margin-bottom:20px }
+  .home{ display:inline-flex; align-items:center; gap:9px; text-decoration:none; color:var(--muted);
+         font-weight:700; font-size:.88rem; padding:7px 14px 7px 11px; border:1px solid var(--line);
+         border-radius:999px; background:var(--panel); transition:border-color .15s ease, color .15s ease }
+  .home:hover{ border-color:var(--gold); color:var(--ink) }
+  .home .shield{ width:20px; height:20px; flex:0 0 20px }
+  .home .hn{ color:var(--gold) }
+  .home .ret{ color:var(--dim); font-weight:600; font-size:.8rem }
+
   .tabs{ display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 22px }
   .tab{ font-size:.82rem; font-weight:700; color:var(--muted); background:var(--panel); border:1px solid var(--line);
         border-radius:999px; padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px }
@@ -68,7 +78,7 @@
   footer{ margin-top:36px; color:var(--dim); font-size:.8rem; border-top:1px solid var(--line); padding-top:16px;
           display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; align-items:center }
   footer .fbrand{ display:inline-flex; align-items:center; gap:8px; color:var(--ink); font-weight:700; font-size:.9rem }
-  footer .fbrand .shield{ width:22px; height:22px; flex:0 0 22px; background:transparent no-repeat center/contain
+  .shield{ width:22px; height:22px; flex:0 0 22px; background:transparent no-repeat center/contain
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 52'><defs><linearGradient id='s' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%233b5168'/><stop offset='1' stop-color='%231a2530'/></linearGradient></defs><path d='M7 5 H41 Q43 5 43 7 V27 Q43 40 24 48 Q5 40 5 27 V7 Q5 5 7 5 Z' fill='url(%23s)' stroke='%235AA9EC' stroke-width='2'/><text x='24' y='32' text-anchor='middle' font-family='Century Gothic, Futura, sans-serif' font-size='16' font-weight='800' letter-spacing='0.5' fill='%23ffffff'>CTF</text></svg>") }
   footer .fbrand .tag{ color:var(--dim); font-weight:600; font-size:.75rem }
   footer .fmeta a{ color:var(--gold); text-decoration:none; font-weight:700 }
@@ -86,6 +96,7 @@
 </head>
 <body>
 <div class="wrap">
+  <nav class="sitenav"><a class="home" href="https://ctf.guru"><span class="shield"></span><span class="hn">ctf.guru</span><span class="ret">← all topics</span></a></nav>
   <header>
     <div class="kick">Security · Visual Explainer Library</div>
     <h1>Cybersecurity &amp; AI Security</h1>
